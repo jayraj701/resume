@@ -1,0 +1,142 @@
+{
+  "main": {
+    "intro":"Hello, I am Jayraj Nimbalkar",
+    "name" : "Jayraj Nimbalkar",
+    "description":"I am a C# Developer enthusiastic about practicing cloud application development in Microsoft Azure. ",
+    "image":"profilepic.jpg",
+    "bio":"I like coding and solving challenges and exploring different ways to do so, I have worked on Microsoft's stack of technologies but not limited to, C#, Azure, HTML, CSS, JavaScript, Angular, React, etc. In my free time, I love exploring nature around, walking, running through the countryside.",
+    "contactmessage":"Want to get in touch, contact me!",
+    "email": "jsn4701@gmail.com",
+    "phone": "+447775236983",
+    "github":"https://github.com/jayraj701",
+    "project":"https://github.com/jayraj701?tab=projects",
+    "address":{
+      "street":"Granville Road",
+      "city":"St Albans",
+      "state":"Hertfordshire",
+      "zip": "AL13PD"
+    },
+    "website": "",
+    "resumedownload":"https://jayresume.blob.core.windows.net/resume/JayrajNimbalkar-CV.docx",
+    "social":[
+      {
+        "name":"facebook",
+        "url":"https://www.facebook.com/jayraj.nimbalkar.1829",
+        "className":"fa fa-facebook"
+      },
+      {
+        "name":"twitter",
+        "url":"https://twitter.com/nimbalkarjayraj",
+        "className":"fa fa-twitter"
+      },
+      {
+        "name":"linkedin",
+        "url":"https://www.linkedin.com/in/jayraj-nimbalkar-a6505153",
+        "className":"fa fa-linkedin"
+      },
+      {
+        "name":"instagram",
+        "url":"https://www.instagram.com/nimbalkarjayraj",
+        "className":"fa fa-instagram"
+      },
+      {
+        "name":"github",
+        "url":"https://github.com/jayraj701",
+        "className":"fa fa-github"
+      }
+    ]
+  },
+  "resume":{
+    "skillmessage":"",
+    "education":[
+      {
+        "school":"Pune University",
+        "degree":"Bachelor of Engineering",
+        "graduated":"May 2013",
+        "description":"Bachelor of Engineering in Information Technology"
+      }
+    ],
+    "work":[
+      {
+        "company":"VillaPlus",
+        "logo":"images/vp2.png",
+        "title":"Agile Developer",
+        "years":"Dec 2018 - Present",
+        "tech": "Tech Stack: Azure, .net 5 Web API, Angular, Cosmos DB, SQL, Redis",
+        "description":"I started with villaplus on greenfield project where we migrated monolithic system to domain driven microservices architecture in Azure, including architecture, disaster recovery, alerting, monitoring, CI/CD standards, TDD style and backup processes and several syncs in early days to keep old system and new systems in sync. I was part of Team where we handled Ecommerce, Payments, Transfers domains."
+      },
+      {
+        "company":"Ash Software",
+        "logo":"images/ash.png",
+        "title":"Programmer Analyst",
+        "years":"Sept 2016 - Dec 2018",
+        "tech": "Tech Stack: Azure, ASP.NET MVC, .Net Core, Angular, SQL",
+        "description":"I started my journey with Ash Software major refactoring, I got chance to move booking engine from ASP.NET Webforms to MVC, one step close to modular approach and initial phase for website revamp. Next step, we need to make Website home page and customer landing page configurable, a step closer to start integrating with Content Management System(Prismic). Next, I led team of 3 junior developers to start on brand new product for our customers to manage their booking post sale in Angular and .Net Core i.e. MyVillaPlus."
+      },
+      {
+        "company":"AtoS",
+        "logo":"images/atos.png",
+        "title":"Senior Software Engineer",
+        "years":"Aug 2013 - Sept 2016",
+        "tech": "Tech Stack: ASP.NET, TFS,VSS, XSLT, HTML, CSS, JavaScript",
+        "description":"I started my professional journey with AtoS as Associate Engineer where I worked initially for OHS, an UK Client and then for Inhouse product as Bit Solution Tool. Journey from Associate to Senior Software engineer within 3 years was result of dedication, deliverables achieved."
+      }
+    ],
+    "skills":[
+      {
+        "name":"Azure",
+        "level":"80%"
+      },
+      {
+        "name":"C#",
+        "level":"90%"
+      },
+      {
+        "name":".Net Core / .Net5 / .Net6",
+        "level":"90%"
+      },
+      {
+        "name":"JavaScript",
+        "level":"70%"
+      },
+      {
+        "name":"HTML",
+        "level":"80%"
+      },     
+      {
+        "name":"Angular",
+        "level":"70%"
+      },
+      {
+        "name":"CSS",
+        "level":"60%"
+      },
+      {
+        "name":"React",
+        "level":"40%"
+      }
+    ]
+  },
+  "portfolio":{
+    "projects": [
+      {
+        "title":"Migrating existing .net 5 web application to MSAL Authentication",
+        "category":"Technical",
+        "image":"01.jpg",
+        "url":"https://jayraj701.medium.com/migrating-existing-net-5-web-application-to-msal-authentication-9388dcaf373c"
+      },
+      {
+        "title":"Deploy Static HTML UI on Azure Web App using FTP Client",
+        "category":"Technical",
+        "image":"02.jpg",
+        "url":"https://jayraj701.medium.com/deploy-static-html-ui-on-azure-web-app-using-ftp-client-d7ef0b7228e2"
+      },
+      {
+        "title":"Deploy your Python Flask API on Linux Based Azure App Service Using Github Actions",
+        "category":"Technical",
+        "image":"03.jpg",
+        "url":"https://python.plainenglish.io/deploy-your-python-flask-api-on-linux-based-azure-app-service-using-github-actions-5a54d5f9807"
+      }     
+    ]
+  }
+}
