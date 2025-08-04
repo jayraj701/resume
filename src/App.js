@@ -21,7 +21,7 @@ class App extends Component {
 
   getResumeData() {
     $.ajax({
-      url: "./resumeData.json",
+      url: process.env.PUBLIC_URL + "/resumeData.json",
       dataType: "json",
       cache: false,
       success: function(data) {
@@ -32,6 +32,19 @@ class App extends Component {
         alert(err);
       }
     });
+
+    // Example: fetch manifest.json if needed
+    // $.ajax({
+    //   url: process.env.PUBLIC_URL + "/manifest.json",
+    //   dataType: "json",
+    //   cache: false,
+    //   success: function(data) {
+    //     // handle manifest data
+    //   },
+    //   error: function(xhr, status, err) {
+    //     console.log(err);
+    //   }
+    // });
   }
 
   componentDidMount() {
