@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Fade from "react-reveal";
+// import Fade from "react-reveal";
 
 class About extends Component {
   render() {
@@ -18,8 +18,7 @@ class About extends Component {
 
     return (
       <section id="about">
-        <Fade duration={1000}>
-          <div className="row">
+        <div className="row">
             <div className="three columns">
               <img
                 className="profile-pic"
@@ -58,7 +57,7 @@ class About extends Component {
               </div>
             </div>
           </div>
-        </Fade>
+        
       </section>
     );
   }

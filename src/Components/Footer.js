@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Fade from "react-reveal";
+// import Fade from "react-reveal";
 
 class Footer extends Component {
   render() {
@@ -18,11 +18,9 @@ class Footer extends Component {
     return (
       <footer>
         <div className="row">
-          <Fade bottom>
-            <div className="twelve columns">
-              <ul className="social-links">{networks}</ul>             
-            </div>
-          </Fade>
+          <div className="twelve columns">
+            <ul className="social-links">{networks}</ul>             
+          </div>
 
           <div id="go-top">
             <a className="smoothscroll" title="Back to Top" href="#home">
