@@ -13,8 +13,6 @@ class Resume extends Component {
   }
 
   render() {
-
-    const atosPic = "images/atos.png";
     if (!this.props.data) return null;
 
     const skillmessage = this.props.data.skillmessage;
