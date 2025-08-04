@@ -33,18 +33,19 @@ class App extends Component {
       }
     });
 
-    // Example: fetch manifest.json if needed
-    // $.ajax({
-    //   url: process.env.PUBLIC_URL + "/manifest.json",
-    //   dataType: "json",
-    //   cache: false,
-    //   success: function(data) {
-    //     // handle manifest data
-    //   },
-    //   error: function(xhr, status, err) {
-    //     console.log(err);
-    //   }
-    // });
+    // Fetch manifest.json if needed
+    $.ajax({
+      url: process.env.PUBLIC_URL + "/manifest.json",
+      dataType: "json",
+      cache: false,
+      success: function(data) {
+        // handle manifest data here
+        console.log("Manifest loaded:", data);
+      },
+      error: function(xhr, status, err) {
+        console.log(err);
+      }
+    });
   }
 
   componentDidMount() {
