@@ -2,22 +2,22 @@
   "main": {
     "intro":"Hello, I am Jayraj Nimbalkar",
     "name" : "Jayraj Nimbalkar",
-    "description":"I am a C# Developer enthusiastic about practicing cloud application development in Microsoft Azure. ",
+    "description":"I Build, Lead, and Own Mission-Critical Financial Technology Platforms",
     "image":"profilepic.png",
     "bio": "I am a Senior Technology Leader with 12+ years of experience transforming regulated fintech environments into modern, cloud-native, API-first ecosystems. I’ve partnered with leading banks and fintech firms to deliver enterprise-scale digital transformations—accelerating time-to-market by 40% and unlocking multimillion-pound revenue growth within months.\n\nAs Director of Technology at FCamara UK and Interim Principal Engineer for Birmingham Bank, I’ve led the architecture and launch of fully digital savings and lending platforms. This included migrating legacy infrastructure to Mambu and Azure, enabling AI-driven MFA, and implementing biometric KYC/KYB processes. These initiatives onboarded 5,600+ customers, grew deposit accounts by 225%, automated 19,000+ transactions, and processed £295M+ in digital payments—all while maintaining 99.9% uptime and ensuring PCI DSS, GDPR, and FS compliance.\n\nI’ve built and mentored high-performing teams of 25+ professionals, advised executive committees, and shaped global delivery strategies across the UK, Brazil, and Portugal. My expertise spans enterprise architecture (microservices, event-driven systems, DDD), digital product innovation, and operational resilience—underpinned by deep technical leadership in Azure, AWS, .NET Core, DevOps, and secure financial integrations.\n\nDriven by a passion for technology and strategic impact, I focus on aligning engineering excellence with business growth—delivering scalable solutions and empowering teams to innovate in highly regulated markets.\n\n💡 And despite all the leadership titles… I’m still a developer at heart—often found scratching my head over complex code just like day one.",
     "contactmessage":"Want to get in touch, contact me!",
-    "email": "jsn4701@gmail.com",
-    "phone": "+447775236983",
+    "email": "jayraj@avalphatechnologies.com",
+    "phone": "+447775236983/+919730323898",
     "github":"https://github.com/jayraj701",
     "project":"https://github.com/jayraj701?tab=projects",
     "address":{
-      "street":"Granville Road",
+      "street":"",
       "city":"St Albans",
       "state":"Hertfordshire",
-      "zip": "AL13PD"
+      "zip": "UK/ Remote"
     },
     "website": "",
-    "resumedownload":"https://jayresume.blob.core.windows.net/resume/JayrajNimbalkar-CV.docx",
+    "resumedownload":"https://jayresume.blob.core.windows.net/resume/Jayraj_CV.pdf",
     "social":[
       {
         "name":"facebook",
@@ -31,7 +31,7 @@
       },
       {
         "name":"linkedin",
-        "url":"https://www.linkedin.com/in/jayraj-nimbalkar-a6505153",
+        "url":"https://www.linkedin.com/in/jayrajnimbalkar",
         "className":"fa fa-linkedin"
       },
       {
@@ -58,63 +58,63 @@
     ],
     "work":[
       {
+        "company":"FCamara UK",
+        "logo":"images/fcamara.png",
+        "title":"Principal Engineer",
+        "years":"Mar 2022 - Present",
+        "tech": "Azure, AWS, .NET Core, C#, REST API, SQL, Python, JavaScript, React, Microservices, DDD,BDD, Event-Driven Systems, CRM, Resilience Design",
+        "description":"As a Principal Engineer and Strategic Technology Leader at FCamara UK, I’m responsible for shaping technology strategy, driving high-impact digital transformations, and enabling global delivery excellence. My role spans executive advisory, enterprise architecture, and operational leadership, ensuring FCamara consistently delivers world-class fintech and digital banking solutions.\n\n🌍 Strategic Leadership\n- Advising the Executive Committee of BakerOnline, a €350M digital commerce platform serving 800+ SMBs, on technical growth strategy, platform scalability, and build-vs-buy evaluations.\n- Partnering with C-level stakeholders to assess technology capabilities, identify modernization opportunities, and guide strategic investments in digital platforms.\n- Leading due diligence efforts for large-scale technology assessments, ensuring secure, compliant, and future-proof solutions.\n\n🏦 Digital Banking & FinTech Expertise\n- Led end-to-end cloud-native transformations for leading financial institutions, including Birmingham Bank:\n  - Migrated legacy banking systems (CORTEN) to Mambu, Azure, and AWS.\n  - Architected event-driven microservices, ensuring resilience, observability, and security (PCI DSS, GDPR).\n  - Delivered fully automated transaction processing handling £295M+ and 19K+ transactions with zero downtime.\n  - Directed development and rollout of Online Banking, Savings Product Marketplace, Omnichannel Platform, and multiple regulatory reporting pipelines (WhistleBrook WIRES ETLs).\n  - Integrated with 15+ fintech providers (Mambu, nCino, LexisNexis, Equifax, Callsign, AccessPay, ClearBank, Tink) to enable scalable, compliant financial services.\n\n👥 Team Leadership & Culture\n- Scaled and managed a 25+ cross-functional global team, including Tech Managers, Engineers, Product Owners, and UX Researchers.\n- Fostered a security-first, ownership-driven culture, enabling rapid yet compliant delivery of mission-critical solutions.\n- Implemented notifications, auditing, secure access policies, and workflow automation to enhance operational resilience and transparency.\n\n📈 Business Impact\n- 1,800% increase in digital customer onboarding (300 → 5,668)\n- 225% increase in deposit accounts (2,000 → 6,540)\n- 100% automation of transaction flows, scaling to 19K+ transactions\n- Reduced onboarding and processing times by 60% while maintaining 99.9% uptime\n- Delivered strategic build-vs-buy assessments and vendor management, ensuring cost-effective, scalable solutions\n\n⚡ Global Delivery Framework\n- Designed and operationalized FCamara’s Global Delivery Framework, enabling seamless international delivery from Brazil, Portugal, UK, US, and Belgium.\n- Reduced talent deployment time by 80% through streamlined mobilization, intelligent resource planning, and optimized DevOps readiness.\n- Established governance, visibility dashboards, and delivery playbooks to ensure scalable, high-quality client onboarding and execution."
+      },
+      {
         "company":"VillaPlus",
-        "logo":"images/vp2.png",
-        "title":"Agile Developer",
-        "years":"Dec 2018 - Present",
-        "tech": "Tech Stack: Azure, .net 5 Web API, Angular, Cosmos DB, SQL, Redis",
-        "description":"I started with villaplus on greenfield project where we migrated monolithic system to domain driven microservices architecture in Azure, including architecture, disaster recovery, alerting, monitoring, CI/CD standards, TDD style and backup processes and several syncs in early days to keep old system and new systems in sync. I was part of Team where we handled Ecommerce, Payments, Transfers domains."
+        "logo":"images/villaplus.jpg",
+        "title":"Senior Agile Developer",
+        "years":"Dec 2018 - Mar 2022",
+        "tech": "Azure, .net 5 Web API, Angular, Cosmos DB, SQL, Redis",
+        "description":"As a Senior Software Engineer at VillaPlus, I played a key role in modernizing the company’s booking and payments platform. I was part of the core team that migrated a large monolithic system into a domain-driven microservices architecture hosted on Azure, covering domains such as E-commerce, Booking, Payments, Transfers, Car Hire, and Flights.\n\nI contributed to architectural design, disaster recovery planning, monitoring, alerting, CI/CD pipelines, and automated backup processes, ensuring resilience and scalability. I developed a unique, plug-and-play injectable payment interface in JavaScript, enabling seamless integration with major payment gateways including Braintree, NMI, Trust Payments, and AccessPay for both card transactions and Direct Debits.\n\nAdditionally, I led the development of ‘MyVillaPlus’, an Angular and .NET Core-based booking management platform, and ensured smooth synchronization between legacy and new systems during the migration phase, all while promoting TDD practices and high engineering standards."
       },
       {
         "company":"Ash Software",
         "logo":"images/ash.png",
         "title":"Programmer Analyst",
         "years":"Sept 2016 - Dec 2018",
-        "tech": "Tech Stack: Azure, ASP.NET MVC, .Net Core, Angular, SQL",
-        "description":"I started my journey with Ash Software major refactoring, I got chance to move booking engine from ASP.NET Webforms to MVC, one step close to modular approach and initial phase for website revamp. Next step, we need to make Website home page and customer landing page configurable, a step closer to start integrating with Content Management System(Prismic). Next, I led team of 3 junior developers to start on brand new product for our customers to manage their booking post sale in Angular and .Net Core i.e. MyVillaPlus."
+        "tech": "Azure, ASP.NET MVC, .Net Core, Angular, SQL",
+        "description":"I began my journey at Ash Software, where I focused on refactoring and modernizing the legacy booking engine by migrating it from ASP.NET WebForms to MVC, laying the foundation for a modular architecture and the upcoming website revamp. I also introduced configurable home and customer landing pages, setting the stage for future CMS integration (Prismic) to enable more dynamic content management.\n\nIn this phase, I led a team of three junior developers in building a new post-sale customer booking management product—‘MyVillaPlus’—developed in Angular and .NET Core. This initiative marked the first step toward transitioning from a tightly coupled legacy system to a scalable, customer-centric platform, paving the way for the later full microservices migration and digital transformation efforts at VillaPlus."
       },
       {
-        "company":"AtoS",
+        "company":"Atos",
         "logo":"images/atos.png",
         "title":"Senior Software Engineer",
         "years":"Aug 2013 - Sept 2016",
         "tech": "Tech Stack: ASP.NET, TFS,VSS, XSLT, HTML, CSS, JavaScript",
-        "description":"I started my professional journey with AtoS as Associate Engineer where I worked initially for OHS, an UK Client and then for Inhouse product as Bit Solution Tool. Journey from Associate to Senior Software engineer within 3 years was result of dedication, deliverables achieved."
+        "description":"I began my professional journey with Atos as an Associate Engineer, working closely with a UK-based client (OHS) and later contributing to the in-house Bit Solution Tool. This role gave me early exposure to European engineering standards, cross-border collaboration, and enterprise-grade software delivery.\n\nDuring my three years at Atos, I developed strong foundations in .NET development, SDLC best practices, and agile delivery, while continuously learning from experienced European engineering teams. My commitment to quality, ownership, and technical excellence enabled me to progress rapidly from Associate Engineer to Senior Software Engineer, a milestone achieved through consistent delivery and recognition of my contributions to high-impact projects."
       }
     ],
-    "skills":[
-      {
-        "name":"Azure",
-        "level":"80%"
-      },
-      {
-        "name":"C#",
-        "level":"90%"
-      },
-      {
-        "name":".Net Core / .Net5 / .Net6",
-        "level":"90%"
-      },
-      {
-        "name":"JavaScript",
-        "level":"70%"
-      },
-      {
-        "name":"HTML",
-        "level":"80%"
-      },     
-      {
-        "name":"Angular",
-        "level":"70%"
-      },
-      {
-        "name":"CSS",
-        "level":"60%"
-      },
-      {
-        "name":"React",
-        "level":"40%"
-      }
+    "skills": [
+      { "name": "Azure" },
+      { "name": "AWS" },
+      { "name": ".NET Core / .NET5 / .NET6" },
+      { "name": "C#" },
+      { "name": "REST API" },
+      { "name": "SQL" },
+      { "name": "Python" },
+      { "name": "JavaScript" },
+      { "name": "React" },
+      { "name": "Microservices" },
+      { "name": "DDD" },
+      { "name": "BDD" },
+      { "name": "Event-Driven Systems" },
+      { "name": "CRM" },
+      { "name": "Resilience Design" },
+      { "name": "Angular" },
+      { "name": "Cosmos DB" },
+      { "name": "Redis" },
+      { "name": "ASP.NET MVC" },
+      { "name": "HTML" },
+      { "name": "CSS" },
+      { "name": "TFS" },
+      { "name": "VSS" },
+      { "name": "XSLT" }
     ]
   },
   "portfolio":{

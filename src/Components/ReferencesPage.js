@@ -1,49 +1,119 @@
-import React from "react";
+import React, { useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import BlogHeaderWithNav from "./BlogHeader";
 import BlogFooter from "./BlogFooter";
+import "../App.css";
+import "../css/references.css";
 
-const referencesData = [
+const referenceImages = [
   {
-    name: "John Doe",
-    position: "Senior Manager, LinkedIn",
-    text: "Jayraj is a highly skilled engineer with a passion for excellence. His contributions to our team were invaluable.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
+    image: "images/paul.png",
+    alt: "LinkedIn Recommendation- Paul Grey",
+    linkedin: "https://www.linkedin.com/in/jayrajnimbalkar/details/recommendations/?detailScreenTabIndex=0"
   },
   {
-    name: "Jane Smith",
-    position: "Director, LinkedIn",
-    text: "Jayraj consistently delivered outstanding results and was a pleasure to work with.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg"
+    image: "images/matt.png",
+    alt: "LLinkedIn Recommendation- Matt Smith",
+    linkedin: "https://www.linkedin.com/in/jayrajnimbalkar/details/recommendations/?detailScreenTabIndex=0"
+  },
+  {
+    image: "images/dion.png",
+    alt: "LinkedIn Recommendation- Dion Judge",
+    linkedin: "https://www.linkedin.com/in/jayrajnimbalkar/details/recommendations/?detailScreenTabIndex=0"
+  },
+  {
+    image: "images/raphael.png",
+    alt: "LinkedIn Recommendation- Raphael Yoshiga",
+    linkedin: "https://www.linkedin.com/in/jayrajnimbalkar/details/recommendations/?detailScreenTabIndex=0"
   }
+  // Add more screenshots as needed
 ];
 
 const ReferencesPage = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalImg, setModalImg] = useState(null);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 3,
+    centerMode: true,
+    centerPadding: "60px",
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+          centerPadding: "16px",
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 2000,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+          centerPadding: "8px",
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 2000,
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <BlogHeaderWithNav />
-      <section id="references" style={{ background: "#f8f8f8", padding: "60px 0", minHeight: "100vh" }}>
-        <div className="container">
-          <h2 style={{ textAlign: "center", marginBottom: 40 }}>References</h2>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: 32 }}>
-            {referencesData.map((ref, idx) => (
-              <div key={idx} style={{ flex: "1 1 300px", maxWidth: 400, background: "#fff", borderRadius: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", padding: 24, opacity: 0.7 }}>
-                <img src={ref.image} alt={ref.name} style={{ width: 64, height: 64, borderRadius: "50%", marginBottom: 16 }} />
-                <h4 style={{ margin: "8px 0 4px 0" }}>{ref.name}</h4>
-                <p style={{ fontStyle: "italic", color: "#555", marginBottom: 8 }}>{ref.position}</p>
-                <p style={{ fontSize: "1.05rem", color: "#222" }}>&ldquo;{ref.text}&rdquo;</p>
+      <section id="references" className="references-section">
+        <div className="references-fullwidth">
+          <h2 className="references-title">References & Recommendations</h2>
+          <Slider
+            {...settings}
+            className="carousel-slider center-mode-slider"
+          >
+            {referenceImages.map((ref, idx) => (
+              <div key={idx} className="carousel-card">
+                <div className="carousel-img-wrapper">
+                  <img
+                    src={ref.image}
+                    alt={ref.alt}
+                    className="carousel-img"
+                    onClick={() => { setModalOpen(true); setModalImg(ref); }}
+                    title="Click to expand"
+                  />
+                </div>
+                <div className="carousel-link-row">
+                  <a href={ref.linkedin} target="_blank" rel="noopener noreferrer" className="carousel-link">
+                    View on LinkedIn
+                  </a>
+                </div>
               </div>
             ))}
-          </div>
-          <div style={{ marginTop: 48 }}>
-            <h3>Additional Comments</h3>
-            <p>
-              Jayraj has received multiple recommendations for his technical and leadership skills. His ability to collaborate and innovate is recognized by colleagues and managers alike.
-            </p>
-            <p>
-              For more references, please visit Jayraj's LinkedIn profile or contact his previous employers.
-            </p>
-          </div>
+          </Slider>
         </div>
+        {modalOpen && modalImg && (
+          <div className="modal-overlay" onClick={() => setModalOpen(false)}>
+            <img
+              src={modalImg.image}
+              alt={modalImg.alt}
+              className="modal-img"
+              onClick={e => e.stopPropagation()}
+            />
+            <button onClick={() => setModalOpen(false)} className="modal-close-btn" aria-label="Close Modal">
+              <span className="modal-close-x">&times;</span>
+            </button>
+          </div>
+        )}
       </section>
       <BlogFooter />
     </>
