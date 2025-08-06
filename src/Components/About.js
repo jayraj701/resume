@@ -18,46 +18,43 @@ class About extends Component {
 
     return (
       <section id="about">
-        <div className="row">
-            <div className="three columns">
-              <img
-                className="profile-pic"
-                src={profilepic}
-                alt="Jayraj Nimbalkar"
-              />
-            </div>
-            <div className="nine columns main-col">
-              <h2>About Me</h2>
-
-              <p>{bio}</p>
-              <div className="row">
-                <div className="columns contact-details">
-                  <h2>Contact Details</h2>
-                  <p className="address">
-                    <span>{name}</span>
-                    <br />
-                    <span>
-                      {street}
-                      <br />
-                      {city} {state}, {zip}
-                    </span>
-                    <br />
-                    <span>{phone}</span>
-                    <br />
-                    <span>{email}</span>
-                  </p>
-                </div>
-                <div className="columns download">
-                  <p>
-                    <a href={resumeDownload} className="button">
-                      <i className="fa fa-download"></i>Download Resume
-                    </a>
-                  </p>
-                </div>
+        <div className="about-modern-card">
+          <div className="about-modern-image">
+            <img
+              className="profile-pic-modern"
+              src={profilepic}
+              alt="Jayraj Nimbalkar"
+            />
+          </div>
+          <div className="about-modern-content">
+            <h2 className="about-modern-title">About Me</h2>
+            <p className="about-modern-bio">{bio}</p>
+            <div className="about-modern-details">
+              <div className="about-modern-contact">
+                <h3>Contact Details</h3>
+                <ul>
+                  <li><strong>Name:</strong> {name}</li>
+                  <li><strong>Address:</strong> {street}, {city} {state}, {zip}</li>
+                  <li><strong>Phone:</strong> {phone}</li>
+                  <li><strong>Email:</strong> <a href={`mailto:${email}`}>{email}</a></li>
+                </ul>
+              </div>
+              <div className="about-modern-download" style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
+                <a href={resumeDownload} className="about-modern-button" target="_blank" rel="noopener noreferrer">
+                  <i className="fa fa-download"></i> Download Resume
+                </a>
+                <a
+                  className="libutton"
+                  href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=jayrajnimbalkar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Follow on LinkedIn
+                </a>
               </div>
             </div>
           </div>
-        
+        </div>
       </section>
     );
   }
