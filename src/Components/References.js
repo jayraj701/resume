@@ -1,47 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
+import "../App.css";
 
-const referencesData = [
+// Dummy data for LinkedIn references carousel
+const references = [
   {
+    image: "images/references/paul.png", // Updated as per user request
     name: "John Doe",
-    position: "Senior Manager, LinkedIn",
-    text: "Jayraj is a highly skilled engineer with a passion for excellence. His contributions to our team were invaluable.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
+    position: "CTO, Example Corp",
+    linkedin: "https://www.linkedin.com/in/dummyprofile1",
+    text: "Jayraj is a visionary technology leader who consistently delivers high-impact results."
   },
   {
+    image: "images/references/ref2.jpg",
     name: "Jane Smith",
-    position: "Director, LinkedIn",
-    text: "Jayraj consistently delivered outstanding results and was a pleasure to work with.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg"
+    position: "Head of Engineering, FinTech Ltd",
+    linkedin: "https://www.linkedin.com/in/dummyprofile2",
+    text: "His technical depth and leadership have been instrumental in our digital transformation."
   }
+  // Add more references as needed
 ];
 
-const References = () => {
+const ReferencesCarousel = () => {
+  const [current, setCurrent] = useState(0);
+  const total = references.length;
+
+  const next = () => setCurrent((current + 1) % total);
+  const prev = () => setCurrent((current - 1 + total) % total);
+
   return (
-    <section id="references" style={{ background: "#f8f8f8", padding: "60px 0" }}>
-      <div className="container">
-        <h2 style={{ textAlign: "center", marginBottom: 40 }}>References</h2>
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: 32 }}>
-          {referencesData.map((ref, idx) => (
-            <div key={idx} style={{ flex: "1 1 300px", maxWidth: 400, background: "#fff", borderRadius: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", padding: 24, opacity: 0.7 }}>
-              <img src={ref.image} alt={ref.name} style={{ width: 64, height: 64, borderRadius: "50%", marginBottom: 16 }} />
-              <h4 style={{ margin: "8px 0 4px 0" }}>{ref.name}</h4>
-              <p style={{ fontStyle: "italic", color: "#555", marginBottom: 8 }}>{ref.position}</p>
-              <p style={{ fontSize: "1.05rem", color: "#222" }}>&ldquo;{ref.text}&rdquo;</p>
-            </div>
-          ))}
+    <section id="references" className="references-section">
+      <h2>References & Recommendations</h2>
+      <div className="carousel-container">
+        <button className="carousel-arrow left" onClick={prev}>&#8592;</button>
+        <div className="carousel-card">
+          <img src={references[current].image} alt={references[current].name} className="reference-img" />
+          <div className="reference-info">
+            <h3>{references[current].name}</h3>
+            <p className="reference-position">{references[current].position}</p>
+            <a href={references[current].linkedin} target="_blank" rel="noopener noreferrer" className="linkedin-link">
+              View on LinkedIn
+            </a>
+            <blockquote className="reference-text">{references[current].text}</blockquote>
+          </div>
         </div>
-        <div style={{ marginTop: 48 }}>
-          <h3>Additional Comments</h3>
-          <p>
-            Jayraj has received multiple recommendations for his technical and leadership skills. His ability to collaborate and innovate is recognized by colleagues and managers alike.
-          </p>
-          <p>
-            For more references, please visit Jayraj's LinkedIn profile or contact his previous employers.
-          </p>
-        </div>
+        <button className="carousel-arrow right" onClick={next}>&#8594;</button>
       </div>
     </section>
   );
 };
 
-export default References;
+export default ReferencesCarousel;

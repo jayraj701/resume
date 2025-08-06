@@ -3,6 +3,7 @@ import BlogHeaderWithNav from "./BlogHeader";
 import BlogFooter from "./BlogFooter";
 import { useEffect, useState } from "react";
 import $ from "jquery";
+import "../css/blogs.css";
 
 const Blogs = () => {
   const [blogProjects, setBlogProjects] = useState([]);
@@ -92,17 +93,23 @@ const Blogs = () => {
         </div>
       </section>
       {/* Technical white paper section below */}
-      <section id="blogs" style={{ padding: "40px 0 60px 0", background: "#fff", minHeight: "400px" }}>
-        <div className="container">
-          <h2>Technical White Paper</h2>
-          <p>
-            {/* Replace this with your actual white paper content or embed a PDF/link */}
-            Here you can showcase your technical white paper. Add a summary, download link, or embed the document below.
-          </p>
-          <a href="/path/to/your-whitepaper.pdf" target="_blank" rel="noopener noreferrer" className="button">
-            Download White Paper
-          </a>
-        </div>
+      <section className="blog-whitepaper-section">
+        <h2 className="blog-whitepaper-title">Technical White Paper</h2>
+        <a
+          href="https://jayresume.blob.core.windows.net/resume/Direct_Debit_Payment_Automation_WhitePaper_I.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="blog-whitepaper-img-link"
+        >
+          <img
+            src="images/DDCoverP.png"
+            alt="Direct Debit Payment Automation White Paper Cover"
+            className="blog-whitepaper-img"
+          />
+        </a>
+        <p style={{ textAlign: "center", maxWidth: 520, margin: "0 auto" }}>
+          Download the full white paper for a deep dive into Direct Debit Payment Automation best practices and architecture.
+        </p>
       </section>
       <BlogFooter />
     </>

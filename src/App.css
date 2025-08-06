@@ -1,3 +1,281 @@
+/* Consistent Work Card Logo Sizing */
+
+.work-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: #f7f7f7;
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  z-index: 1;
+}
+
+.work-card {
+  position: relative;
+  min-width: 526px;
+  max-width: 526px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  margin: 0 16px;
+  padding: 22px 20px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  scroll-snap-align: start;
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+
+.work-card-content {
+  padding-left: 90px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.row.work {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.row.work .header-col {
+  flex: 0 0 180px;
+  max-width: 180px;
+  min-width: 120px;
+}
+.row.work .main-col {
+  flex: 1 1 0%;
+  max-width: 100vw;
+}
+@media (max-width: 900px) {
+  .row.work .header-col {
+    flex: 0 0 100px;
+    max-width: 100px;
+    min-width: 80px;
+  }
+}
+/* Larger Work Cards and Modal Popup */
+.work-card-large {
+  min-width: 560px;
+  max-width: 616px;
+  min-height: 220px;
+  cursor: pointer;
+}
+.work-card-large:focus {
+  outline: 2px solid #0A66C2;
+}
+.work-desc-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 340px;
+  color: #222;
+}
+.work-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s;
+}
+.work-modal {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  padding: 36px 32px 28px 32px;
+  max-width: 540px;
+  width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: popIn 0.18s;
+}
+.work-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #111;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.18s;
+}
+.work-modal-close:hover {
+  color: #0A66C2;
+}
+.work-modal-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: #f7f7f7;
+}
+.work-desc-full {
+  white-space: pre-line;
+  color: #222;
+  margin-top: 10px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes popIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@media (max-width: 900px) {
+  .work-card-large {
+    min-width: 95vw;
+    max-width: 99vw;
+  }
+  .work-desc-truncate {
+    max-width: 80vw;
+  }
+  .work-modal {
+    padding: 18px 4vw 18px 4vw;
+  }
+}
+/* Work Experience Scroll Arrows */
+.work-scrollbar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+.work-arrow {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 8px;
+  transition: background 0.18s, transform 0.18s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  z-index: 2;
+}
+.work-arrow:hover {
+  background: #0A66C2;
+  transform: scale(1.08);
+}
+.work-arrow.left {
+  order: 0;
+}
+.work-arrow.right {
+  order: 2;
+}
+.work-scrollbar {
+  order: 1;
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+.work-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Modern Work Experience Horizontal Scroll */
+.work-scrollbar {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: 24px;
+  scroll-snap-type: x mandatory;
+}
+/* Removed duplicate and conflicting .work-card rules. Only the main .work-card at the top of the file is used. */
+.work-card-content h3 {
+  font-size: 1.18rem;
+  margin: 0 0 6px 0;
+}
+.work-title-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.01rem;
+  margin-bottom: 6px;
+  color: #0A66C2;
+}
+.work-title {
+  font-weight: 700;
+  font-size: 1.13rem;
+  color: #0A66C2;
+  letter-spacing: 0.01em;
+  margin-bottom: 2px;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+.work-years {
+  font-style: italic;
+  color: #555;
+}
+.work-tech {
+  font-size: 1.01rem;
+  color: #0078d4;
+  margin-bottom: 8px;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: #f0f6ff;
+  border-radius: 6px;
+  padding: 2px 10px 2px 8px;
+  display: inline-block;
+  font-weight: 500;
+}
+.work-desc {
+  font-size: 1.01rem;
+  color: #222;
+  line-height: 1.7;
+  margin-top: 2px;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+@media (max-width: 900px) {
+  .work-scrollbar {
+    gap: 14px;
+  }
+  .work-card {
+    min-width: 90vw;
+    max-width: 95vw;
+    padding: 16px 8px 14px 8px;
+  }
+}
+/* Modern Skill Tag Cloud */
+.skill-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+.skill-tag {
+  display: inline-block;
+  background: linear-gradient(90deg, #0A66C2 60%, #0078d4 100%);
+  color: #fff;
+  font-family: 'opensans', Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
+  padding: 8px 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: default;
+}
+.skill-tag:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(10,102,194,0.18);
+}
 /* LinkedIn Follow Button */
 .libutton {
   display: inline-block;

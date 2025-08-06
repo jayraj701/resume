@@ -12,6 +12,19 @@ class Resume extends Component {
     return color;
   }
 
+  constructor(props) {
+    super(props);
+    this.state = { modalWork: null };
+  }
+
+  openModal = (work) => {
+    this.setState({ modalWork: work });
+  };
+
+  closeModal = () => {
+    this.setState({ modalWork: null });
+  };
+
   render() {
     if (!this.props.data) return null;
 
@@ -29,34 +42,45 @@ class Resume extends Component {
       );
     });
 
-    const work = this.props.data.work.map(function (work) {
-      return (
-        <div key={work.company}>
-        <img className="profile-pic" src={work.logo} alt="Jayraj Nimbalkar" />
+    // Show most recent job first
+    const workSorted = [...this.props.data.work].sort((a, b) => {
+      // Sort by years string, assuming format: 'Dec 2018 - Present' or similar
+      const getStartYear = (w) => {
+        const match = w.years.match(/(\w+)?\s?(\d{4})/);
+        return match ? parseInt(match[2]) : 0;
+      };
+      return getStartYear(b) - getStartYear(a);
+    });
+
+    const work = workSorted.map((work, idx) => (
+      <div className="work-card work-card-large" key={work.company + idx} onClick={() => this.openModal(work)} tabIndex={0} role="button" aria-label={work.company + ' details'}>
+        <img className="work-logo" src={work.logo} alt={work.company} />
+        <div className="work-card-content">
           <h3>{work.company}</h3>
-          <p className="info">
-            {work.title}
-            <span>&bull;</span> <em className="date">{work.years}</em>
-          </p>
-          <p> <i>{work.tech}</i> <br/>
-          {work.description}
-          </p>          
+          <div className="work-title-row">
+            <span className="work-title">{work.title}</span>
+            <span className="work-years">{work.years}</span>
+          </div>
+          <div className="work-tech">{work.tech}</div>
+          <div className="work-desc work-desc-truncate">{work.description}</div>
         </div>
-      );
-    });
+      </div>
+    ));
 
-    const skills = this.props.data.skills.map((skills) => {
-      const backgroundColor = this.getRandomColor();
-      const className = "bar-expand " + skills.name.toLowerCase();
-      const width = skills.level;
+    // Scroll handlers for arrow buttons
+    const scrollWork = (dir) => {
+      const el = document.querySelector('.work-scrollbar');
+      if (el) {
+        el.scrollBy({ left: dir * 340, behavior: 'smooth' });
+      }
+    };
 
-      return (
-        <li key={skills.name}>
-          <span style={{ width, backgroundColor }} className={className}></span>
-          <em>{skills.name}</em>
-        </li>
-      );
-    });
+    // Modern skill tag cloud (no bar chart)
+    const skills = this.props.data.skills.map((skill) => (
+      <span key={skill.name} className="skill-tag">
+        {skill.name}
+      </span>
+    ));
 
     return (
       <section id="resume">
@@ -80,8 +104,30 @@ class Resume extends Component {
               <span>Work</span>
             </h1>
           </div>
-
-          <div className="nine columns main-col">{work}</div>
+          <div className="nine columns main-col">
+            <div className="work-scrollbar-wrapper">
+              <button className="work-arrow left" onClick={() => scrollWork(-1)} aria-label="Scroll left">&#8592;</button>
+              <div className="work-scrollbar">
+                {work}
+              </div>
+              <button className="work-arrow right" onClick={() => scrollWork(1)} aria-label="Scroll right">&#8594;</button>
+            </div>
+            {this.state.modalWork && (
+              <div className="work-modal-overlay" onClick={this.closeModal}>
+                <div className="work-modal" onClick={e => e.stopPropagation()}>
+                  <button className="work-modal-close" onClick={this.closeModal} aria-label="Close">&times;</button>
+                  <img className="work-modal-logo" src={this.state.modalWork.logo} alt={this.state.modalWork.company} />
+                  <h2>{this.state.modalWork.company}</h2>
+                  <div className="work-title-row">
+                    <span className="work-title">{this.state.modalWork.title}</span>
+                    <span className="work-years">{this.state.modalWork.years}</span>
+                  </div>
+                  <div className="work-tech">{this.state.modalWork.tech}</div>
+                  <div className="work-desc work-desc-full">{this.state.modalWork.description}</div>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="row skill">
@@ -90,12 +136,9 @@ class Resume extends Component {
               <span>Skills</span>
             </h1>
           </div>
-
           <div className="nine columns main-col">
-            <p>{skillmessage}</p>
-
-            <div className="bars">
-              <ul className="skills">{skills}</ul>
+            <div className="skill-tag-cloud">
+              {skills}
             </div>
           </div>
         </div>
