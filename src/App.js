@@ -1,78 +1,58 @@
-import React, { Component } from "react";
-import $ from "jquery";
-import "./App.css";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+import React, { useState, useEffect } from "react";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import theme from "./theme";
+import SiteAppBar from "./Components/SiteAppBar";
+import HeroSection from "./Components/HeroSection";
+import ImpactMetrics from "./Components/ImpactMetrics";
 import About from "./Components/About";
-import Resume from "./Components/Resume";
+import WorkExperienceSection from "./Components/WorkExperienceSection";
+import SignatureProjectSection from "./Components/SignatureProjectSection";
+import SkillsSection from "./Components/SkillsSection";
+import EducationSection from "./Components/EducationSection";
 import Contact from "./Components/Contact";
+import SiteFooter from "./Components/SiteFooter";
 import Blogs from "./Components/Blogs";
 import ReferencesPage from "./Components/ReferencesPage";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      foo: "bar",
-      resumeData: {}
-    };   
-  }
+const MainPage = ({ resumeData }) => (
+  <>
+    <SiteAppBar />
+    <HeroSection data={resumeData.main} />
+    <ImpactMetrics data={resumeData.main} />
+    <About data={resumeData.main} />
+    <WorkExperienceSection data={resumeData.resume} />
+    <SignatureProjectSection data={resumeData.signatureProject} />
+    <SkillsSection data={resumeData.resume} />
+    <EducationSection data={resumeData.resume} />
+    <Contact data={resumeData.main} />
+    <SiteFooter data={resumeData.main} />
+  </>
+);
 
-  getResumeData() {
-    $.ajax({
-      url: process.env.PUBLIC_URL + "/resumeData.json",
-      dataType: "json",
-      cache: false,
-      success: function(data) {
-        this.setState({ resumeData: data });
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.log(err);
-        alert(err);
-      }
-    });
+const App = () => {
+  const [resumeData, setResumeData] = useState({});
 
-    // Fetch manifest.json if needed
-    $.ajax({
-      url: process.env.PUBLIC_URL + "/manifest.json",
-      dataType: "json",
-      cache: false,
-      success: function(data) {
-        // handle manifest data here
-        console.log("Manifest loaded:", data);
-      },
-      error: function(xhr, status, err) {
-        console.log(err);
-      }
-    });
-  }
+  useEffect(() => {
+    fetch(process.env.PUBLIC_URL + "/resumeData.json")
+      .then((r) => r.json())
+      .then((data) => setResumeData(data))
+      .catch(console.error);
+  }, []);
 
-  componentDidMount() {
-    this.getResumeData();
-  }
-
-  render() {
-    return (
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Router>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={
-              <>
-                <Header data={this.state.resumeData.main} />
-                <About data={this.state.resumeData.main} />
-                <Resume data={this.state.resumeData.resume} />
-                <Contact data={this.state.resumeData.main} />
-                <Footer data={this.state.resumeData.main} />
-              </>
-            } />
-            <Route path="/blogs" element={<Blogs />} />
-            <Route path="/references" element={<ReferencesPage />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<MainPage resumeData={resumeData} />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/references" element={<ReferencesPage />} />
+        </Routes>
       </Router>
-    );
-  }
-}
+    </ThemeProvider>
+  );
+};
 
 export default App;

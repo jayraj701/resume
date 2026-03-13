@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree -L 2 -a /c/Users/Jayraj/source/repos/resume --ignore node_modules 2>/dev/null || find /c/Users/Jayraj/source/repos/resume -not -path '*/node_modules/*' -not -path '*/.git/*' -type f -o -type d | grep -v node_modules | grep -v '.git' | sort)",
+      "WebSearch",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
