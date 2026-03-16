@@ -22,6 +22,7 @@ const navItems = [
   { label: "Home", section: "home", path: "/" },
   { label: "About", section: "about", path: "/" },
   { label: "Experience", section: "resume", path: "/" },
+  { label: "Products", section: "products", path: "/" },
   { label: "Contact", section: "contact", path: "/" },
   { label: "References", section: null, path: "/references" },
   { label: "Thought Leadership", section: null, path: "/blogs" },

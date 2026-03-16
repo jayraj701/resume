@@ -9,6 +9,7 @@ import ImpactMetrics from "./Components/ImpactMetrics";
 import About from "./Components/About";
 import WorkExperienceSection from "./Components/WorkExperienceSection";
 import SignatureProjectSection from "./Components/SignatureProjectSection";
+import ProductsSection from "./Components/ProductsSection";
 import SkillsSection from "./Components/SkillsSection";
 import EducationSection from "./Components/EducationSection";
 import Contact from "./Components/Contact";
@@ -24,6 +25,7 @@ const MainPage = ({ resumeData }) => (
     <About data={resumeData.main} />
     <WorkExperienceSection data={resumeData.resume} />
     <SignatureProjectSection data={resumeData.signatureProject} />
+    <ProductsSection data={resumeData} />
     <SkillsSection data={resumeData.resume} />
     <EducationSection data={resumeData.resume} />
     <Contact data={resumeData.main} />
