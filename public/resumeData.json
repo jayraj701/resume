@@ -194,6 +194,68 @@
       "Designed WhistleBrook WIRES regulatory reporting ETL pipelines"
     ]
   },
+  "products": [
+    {
+      "id": "astro-terra",
+      "name": "Astro Terra",
+      "tagline": "Amazon Seller Analytics & Product Intelligence Platform",
+      "role": "CTO & Principal Architect",
+      "type": "SaaS B2B · Multi-Tenant",
+      "status": "Live",
+      "period": "2024 – Present",
+      "heroImage": "images/products/astro-hero.jpg",
+      "archImage": "images/products/astro-arch.jpg",
+      "summary": "Astro Terra is a multi-tenant SaaS platform purpose-built for Amazon resellers. It delivers real-time product analytics, profitability intelligence, and purchase workflow automation — enabling sellers to make data-driven sourcing decisions at scale.\n\nArchitected around an event-driven processing core, a configurable quota enforcement engine, and deep Amazon ecosystem integration. The platform serves three client surfaces — a React SPA, Chrome browser extension, and admin dashboard — from a single API backend built across a 14-project layered solution.",
+      "techStack": [".NET 9", "ASP.NET Core", "PostgreSQL", "Azure Service Bus", "Azure SignalR", "Redis", "Cosmos DB", "MassTransit", "React", "Stripe", "OpenTelemetry"],
+      "integrations": ["Amazon SP-API", "Keepa API", "Stripe", "Azure Cosmos DB", "Azure Blob Storage", "Stytch Auth", "Azure AD B2C", "Application Insights", "MessageBird", "OpenAI"],
+      "metrics": [
+        { "value": "27", "label": "API Domain Controllers" },
+        { "value": "220+", "label": "Automated Tests" },
+        { "value": "3", "label": "Client Surfaces" },
+        { "value": "14", "label": "Solution Projects" }
+      ],
+      "architectureHighlights": [
+        {
+          "title": "Event-Driven Bulk Processing Pipeline",
+          "detail": "Request acceptance is fully decoupled from processing. Bulk operations spanning thousands of items return immediately with an operation identifier; a hosted service processes work in configurable chunks while real-time connection channels deliver live progress to the client throughout multi-minute jobs."
+        },
+        {
+          "title": "Configurable Quota & Feature Enforcement",
+          "detail": "A dedicated limit engine evaluates plan tiers, company-level overrides, and cooldown gates independently of all business services. Features are gated at the subscription plan tier — enabling per-tier rollouts, instant enable/disable per company, and A/B testing without code deployments."
+        },
+        {
+          "title": "Dual-Storage Market Data Strategy",
+          "detail": "Large market history payloads (price, rank, offer data) are compressed and split across two storage tiers: a NoSQL document store for fast partition-key reads on recent data, and object storage with cache headers for cost-effective archival. Compression achieves approximately 80% size reduction."
+        },
+        {
+          "title": "Layered Solution Architecture",
+          "detail": "A 14-project solution with strict inward dependency rules keeps inner layers completely free of hosting and transport concerns. This allows the service layer to be tested in isolation with an in-memory database without mocking or external dependencies."
+        },
+        {
+          "title": "OpenTelemetry-First Observability",
+          "detail": "Distributed tracing auto-instruments the complete request chain — HTTP, ORM, gRPC, and message bus — via the OpenTelemetry SDK. A custom telemetry initializer injects authenticated user context into every trace, enabling user-level debugging in Application Insights without manual instrumentation."
+        }
+      ],
+      "challengesSolved": [
+        {
+          "challenge": "Financial Calculation Precision at Scale",
+          "outcome": "Sub-cent accuracy is required across multi-component fee structures (referral fees, fulfilment fees, shipping, and prep costs). Derived financial metrics are stored in the database on calculation rather than recomputed on read — enabling real-time filtering and sorting on ROI, margin, and break-even across large product catalogues."
+        },
+        {
+          "challenge": "High-Volume Data Ingestion Without IO Saturation",
+          "outcome": "Market history payloads can reach 1–5 MB per product. An ~80% compression ratio significantly reduces storage and bandwidth costs. Concurrent write limits prevent connection pool exhaustion when ingesting hundreds of products simultaneously during bulk upload operations."
+        },
+        {
+          "challenge": "Zero-Downtime Authentication Migration",
+          "outcome": "The platform simultaneously supported three authentication systems during a live provider migration. Middleware normalises claims from all providers into a single internal format — keeping all downstream controllers and services completely auth-provider-agnostic and requiring no per-endpoint changes."
+        },
+        {
+          "challenge": "Real-Time Feedback for Long-Running Jobs",
+          "outcome": "Bulk enrichment operations take minutes to complete. Persistent connection channels scoped to individual operations deliver live progress without long-polling. The message-driven event pipeline keeps the processing layer fully decoupled from the real-time transport layer."
+        }
+      ]
+    }
+  ],
   "portfolio":{
     "projects": [
       {
