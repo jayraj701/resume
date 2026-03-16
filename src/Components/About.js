@@ -1,63 +1,227 @@
-import React, { Component } from "react";
-// import Fade from "react-reveal";
+import React from "react";
+import {
+  Box,
+  Container,
+  Grid,
+  Typography,
+  Button,
+  Stack,
+  Divider,
+  Link as MuiLink,
+} from "@mui/material";
+import DownloadIcon from "@mui/icons-material/Download";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
+import PersonIcon from "@mui/icons-material/Person";
 
-class About extends Component {
-  render() {
-    if (!this.props.data) return null;
+const About = ({ data }) => {
+  if (!data) return null;
 
-    const name = this.props.data.name;
-    const profilepic = "images/" + this.props.data.image;
-    const bio = this.props.data.bio;
-    const street = this.props.data.address.street;
-    const city = this.props.data.address.city;
-    const state = this.props.data.address.state;
-    const zip = this.props.data.address.zip;
-    const phone = this.props.data.phone;
-    const email = this.props.data.email;
-    const resumeDownload = this.props.data.resumedownload;
+  const {
+    name,
+    image,
+    bio,
+    address,
+    phone,
+    email,
+    resumedownload,
+    linkedinFollow,
+  } = data;
 
-    return (
-      <section id="about">
-        <div className="about-modern-card">
-          <div className="about-modern-image">
-            <img
-              className="profile-pic-modern"
-              src={profilepic}
-              alt="Jayraj Nimbalkar"
-            />
-          </div>
-          <div className="about-modern-content">
-            <h2 className="about-modern-title">About Me</h2>
-            <p className="about-modern-bio">{bio}</p>
-            <div className="about-modern-details">
-              <div className="about-modern-contact">
-                <h3>Contact Details</h3>
-                <ul>
-                  <li><strong>Name:</strong> {name}</li>
-                  <li><strong>Address:</strong> {street}, {city} {state}, {zip}</li>
-                  <li><strong>Phone:</strong> {phone}</li>
-                  <li><strong>Email:</strong> <a href={`mailto:${email}`}>{email}</a></li>
-                </ul>
-              </div>
-              <div className="about-modern-download" style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
-                <a href={resumeDownload} className="about-modern-button" target="_blank" rel="noopener noreferrer">
-                  <i className="fa fa-download"></i> Download Resume
-                </a>
-                <a
-                  className="libutton"
-                  href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=jayrajnimbalkar"
+  const profilepic = "images/" + image;
+  const bioParagraphs = bio ? bio.split("\n\n").filter(Boolean) : [];
+
+  const contactDetails = [
+    { icon: <PersonIcon fontSize="small" />, label: "Name", value: name },
+    {
+      icon: <LocationOnIcon fontSize="small" />,
+      label: "Location",
+      value: `${address.city}, ${address.state} — ${address.zip}`,
+    },
+    { icon: <PhoneIcon fontSize="small" />, label: "Phone", value: phone },
+    {
+      icon: <EmailIcon fontSize="small" />,
+      label: "Email",
+      value: (
+        <MuiLink href={`mailto:${email}`} color="secondary.main" underline="hover">
+          {email}
+        </MuiLink>
+      ),
+    },
+  ];
+
+  return (
+    <Box
+      component="section"
+      id="about"
+      sx={{
+        py: { xs: 7, md: 10 },
+        bgcolor: "white",
+      }}
+    >
+      <Container maxWidth="lg">
+        <Grid container spacing={{ xs: 4, md: 7 }} alignItems="flex-start">
+          {/* Left column: image + CTAs */}
+          <Grid item xs={12} md={4}>
+            <Box sx={{ position: { md: "sticky" }, top: { md: 100 } }}>
+              {/* Profile image */}
+              <Box
+                sx={{
+                  borderRadius: 4,
+                  overflow: "hidden",
+                  boxShadow: "0 20px 60px rgba(13,33,55,0.15)",
+                  mb: 3,
+                  maxWidth: { xs: 280, md: "100%" },
+                  mx: { xs: "auto", md: 0 },
+                }}
+              >
+                <img
+                  src={profilepic}
+                  alt={name}
+                  style={{ width: "100%", display: "block", objectFit: "cover" }}
+                />
+              </Box>
+
+              {/* CTA buttons */}
+              <Stack spacing={1.5}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  size="large"
+                  startIcon={<DownloadIcon />}
+                  href={resumedownload}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  Download CV
+                </Button>
+                <Button
+                  variant="outlined"
+                  fullWidth
+                  size="large"
+                  startIcon={<LinkedInIcon />}
+                  href={linkedinFollow}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    borderColor: "#0A66C2",
+                    color: "#0A66C2",
+                    "&:hover": {
+                      borderColor: "#0A66C2",
+                      bgcolor: "rgba(10,102,194,0.06)",
+                    },
+                  }}
+                >
                   Follow on LinkedIn
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-}
+                </Button>
+              </Stack>
+
+              {/* Contact details */}
+              <Box
+                sx={{
+                  mt: 3,
+                  p: 2.5,
+                  borderRadius: 3,
+                  bgcolor: "background.default",
+                  border: "1px solid",
+                  borderColor: "divider",
+                }}
+              >
+                <Typography
+                  variant="overline"
+                  color="secondary.main"
+                  sx={{ display: "block", mb: 2 }}
+                >
+                  Contact Details
+                </Typography>
+                <Stack spacing={1.5}>
+                  {contactDetails.map((item) => (
+                    <Stack key={item.label} direction="row" spacing={1.5} alignItems="flex-start">
+                      <Box sx={{ color: "primary.main", flexShrink: 0, mt: "2px" }}>
+                        {item.icon}
+                      </Box>
+                      <Box>
+                        <Typography variant="caption" color="text.secondary" display="block" sx={{ lineHeight: 1.2, mb: 0.25 }}>
+                          {item.label}
+                        </Typography>
+                        <Typography variant="body2" color="text.primary" fontWeight={500}>
+                          {item.value}
+                        </Typography>
+                      </Box>
+                    </Stack>
+                  ))}
+                </Stack>
+              </Box>
+            </Box>
+          </Grid>
+
+          {/* Right column: bio */}
+          <Grid item xs={12} md={8}>
+            <Typography
+              variant="overline"
+              color="secondary.main"
+              sx={{ display: "block", mb: 1 }}
+            >
+              About Me
+            </Typography>
+            <Typography variant="h2" color="primary.main" mb={3}>
+              {name}
+            </Typography>
+            <Box
+              sx={{
+                width: 50,
+                height: 3,
+                bgcolor: "secondary.main",
+                mb: 4,
+                borderRadius: 2,
+              }}
+            />
+
+            {bioParagraphs.map((para, idx) => (
+              <Typography
+                key={idx}
+                variant="body1"
+                color="text.secondary"
+                mb={2.5}
+                sx={{ lineHeight: 1.9 }}
+              >
+                {para}
+              </Typography>
+            ))}
+
+            <Divider sx={{ my: 3 }} />
+
+            {/* Quick stats row */}
+            <Grid container spacing={2}>
+              {[
+                { value: "12+", label: "Years Experience" },
+                { value: "UK", label: "Based In" },
+                { value: "Fintech", label: "Specialisation" },
+                { value: "25+", label: "Team Members Led" },
+              ].map((stat) => (
+                <Grid item xs={6} sm={3} key={stat.label}>
+                  <Box sx={{ textAlign: "center", p: 1.5 }}>
+                    <Typography
+                      variant="h3"
+                      sx={{ color: "secondary.main", fontWeight: 800, fontSize: "1.7rem" }}
+                    >
+                      {stat.value}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary" fontWeight={500}>
+                      {stat.label}
+                    </Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
+  );
+};
 
 export default About;
