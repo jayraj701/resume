@@ -7,14 +7,17 @@ import {
   Stack,
   Chip,
   Divider,
+  Button,
 } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Link } from "react-router-dom";
 
 const SignatureProjectSection = ({ data }) => {
   if (!data) return null;
 
-  const { title, subtitle, period, narrative, metrics, deliverables } = data;
+  const { title, subtitle, period, narrative, metrics, deliverables, caseStudyPath } = data;
 
   return (
     <Box
@@ -61,17 +64,40 @@ const SignatureProjectSection = ({ data }) => {
           <Typography variant="body1" sx={{ color: "rgba(255,255,255,0.6)", fontWeight: 400 }}>
             {subtitle}
           </Typography>
-          <Chip
-            label={period}
-            size="small"
-            sx={{
-              mt: 2,
-              bgcolor: "rgba(0,201,167,0.15)",
-              color: "secondary.main",
-              border: "1px solid rgba(0,201,167,0.3)",
-              fontWeight: 600,
-            }}
-          />
+          <Stack direction="row" spacing={2} alignItems="center" mt={2} flexWrap="wrap" gap={1}>
+            <Chip
+              label={period}
+              size="small"
+              sx={{
+                bgcolor: "rgba(0,201,167,0.15)",
+                color: "secondary.main",
+                border: "1px solid rgba(0,201,167,0.3)",
+                fontWeight: 600,
+              }}
+            />
+            {caseStudyPath && (
+              <Button
+                component={Link}
+                to={caseStudyPath}
+                variant="outlined"
+                size="small"
+                endIcon={<ArrowForwardIcon />}
+                sx={{
+                  color: "secondary.main",
+                  borderColor: "rgba(0,201,167,0.5)",
+                  fontWeight: 600,
+                  fontSize: "0.8rem",
+                  textTransform: "none",
+                  "&:hover": {
+                    borderColor: "secondary.main",
+                    bgcolor: "rgba(0,201,167,0.1)",
+                  },
+                }}
+              >
+                View Case Study
+              </Button>
+            )}
+          </Stack>
         </Box>
 
         <Grid container spacing={{ xs: 4, md: 6 }}>

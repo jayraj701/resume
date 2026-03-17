@@ -25,6 +25,7 @@ const Contact = ({ data }) => {
       label: "Location",
       value: `${address.city}, ${address.state}`,
       sub: address.zip,
+      sub2: "🇬🇧 UK Experienced · 🇦🇪 Dubai",
     },
     {
       icon: <PhoneIcon sx={{ fontSize: "2rem" }} />,
@@ -102,6 +103,11 @@ const Contact = ({ data }) => {
                 {item.sub && (
                   <Typography variant="body2" color="text.secondary">
                     {item.sub}
+                  </Typography>
+                )}
+                {item.sub2 && (
+                  <Typography variant="caption" color="text.disabled" sx={{ display: "block", mt: 0.5 }}>
+                    {item.sub2}
                   </Typography>
                 )}
               </Paper>

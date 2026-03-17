@@ -16,6 +16,8 @@ import Contact from "./Components/Contact";
 import SiteFooter from "./Components/SiteFooter";
 import Blogs from "./Components/Blogs";
 import ReferencesPage from "./Components/ReferencesPage";
+import BirminghamBankCaseStudy from "./Components/BirminghamBankCaseStudy";
+import AstroCaseStudy from "./Components/AstroCaseStudy";
 
 const MainPage = ({ resumeData }) => (
   <>
@@ -51,6 +53,8 @@ const App = () => {
           <Route path="/" element={<MainPage resumeData={resumeData} />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/references" element={<ReferencesPage />} />
+          <Route path="/case-studies/birmingham-bank" element={<BirminghamBankCaseStudy />} />
+          <Route path="/case-studies/astro-terra" element={<AstroCaseStudy />} />
         </Routes>
       </Router>
     </ThemeProvider>

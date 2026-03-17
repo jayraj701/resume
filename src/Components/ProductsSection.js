@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Container,
@@ -8,24 +8,12 @@ import {
   Chip,
   Divider,
   Button,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  IconButton,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
   Paper,
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import LayersIcon from "@mui/icons-material/Layers";
-import AccountTreeIcon from "@mui/icons-material/AccountTree";
-import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
-import HubIcon from "@mui/icons-material/Hub";
+import { Link } from "react-router-dom";
 
 // ─── Status badge colours ─────────────────────────────────────────────────────
 
@@ -35,270 +23,12 @@ const STATUS_STYLE = {
   Beta: { bg: "rgba(230,126,34,0.12)", color: "#E67E22", border: "rgba(230,126,34,0.3)" },
 };
 
-// ─── Full Architecture Dialog ─────────────────────────────────────────────────
-
-const ArchDialog = ({ open, onClose, product }) => {
-  if (!product) return null;
-
-  return (
-    <Dialog
-      open={open}
-      onClose={onClose}
-      maxWidth="md"
-      fullWidth
-      scroll="paper"
-      PaperProps={{
-        sx: {
-          borderRadius: 3,
-          maxHeight: "92vh",
-          overflow: "hidden",
-        },
-      }}
-    >
-      {/* Dialog Header */}
-      <DialogTitle
-        component="div"
-        sx={{
-          bgcolor: "primary.main",
-          px: { xs: 3, md: 4 },
-          py: 3,
-          display: "flex",
-          alignItems: "flex-start",
-          justifyContent: "space-between",
-          flexShrink: 0,
-        }}
-      >
-        <Box>
-          <Typography
-            variant="overline"
-            sx={{ color: "secondary.main", display: "block", mb: 0.5 }}
-          >
-            Architecture Walkthrough
-          </Typography>
-          <Typography
-            variant="h5"
-            sx={{ color: "white", fontWeight: 700, lineHeight: 1.3, mb: 0.5 }}
-          >
-            {product.name}
-          </Typography>
-          <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.6)" }}>
-            {product.tagline}
-          </Typography>
-        </Box>
-        <IconButton
-          onClick={onClose}
-          size="small"
-          sx={{ color: "rgba(255,255,255,0.65)", mt: 0.5, ml: 2, flexShrink: 0 }}
-        >
-          <CloseIcon />
-        </IconButton>
-      </DialogTitle>
-
-      <DialogContent dividers sx={{ p: 0, overflowY: "auto" }}>
-        {/* Architecture Diagram Image */}
-        <Box
-          sx={{
-            width: "100%",
-            height: { xs: 210, md: 340 },
-            position: "relative",
-            overflow: "hidden",
-            // Gradient fallback — silently replaced when image loads
-            background:
-              "linear-gradient(145deg, #060D14 0%, #0D2137 55%, #122840 100%)",
-            backgroundImage: `url(${process.env.PUBLIC_URL}/${product.archImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "top center",
-          }}
-        >
-          {/* Placeholder label — low opacity, only visible without the image */}
-          <Stack
-            sx={{
-              position: "absolute",
-              inset: 0,
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 1,
-              opacity: 0.22,
-              pointerEvents: "none",
-            }}
-          >
-            <AccountTreeIcon sx={{ fontSize: "3rem", color: "rgba(0,201,167,1)" }} />
-            <Typography variant="caption" sx={{ color: "white", fontSize: "0.72rem" }}>
-              {product.archImage} · 900 × 500 px
-            </Typography>
-            <Typography variant="caption" sx={{ color: "white", fontSize: "0.68rem" }}>
-              Replace with your architecture diagram
-            </Typography>
-          </Stack>
-        </Box>
-
-        <Box sx={{ px: { xs: 3, md: 4.5 }, pt: 4.5, pb: 5 }}>
-          {/* ── Architecture Decisions ────────────────────────────────── */}
-          <Stack direction="row" spacing={1.5} alignItems="center" mb={3}>
-            <LayersIcon sx={{ color: "secondary.main", fontSize: "1.35rem" }} />
-            <Typography variant="h6" sx={{ fontWeight: 700, color: "primary.main" }}>
-              Architecture Decisions
-            </Typography>
-          </Stack>
-
-          {product.architectureHighlights.map((item, idx) => (
-            <Accordion
-              key={idx}
-              disableGutters
-              elevation={0}
-              sx={{
-                mb: 1.25,
-                border: "1px solid",
-                borderColor: "divider",
-                borderRadius: "10px !important",
-                "&:before": { display: "none" },
-                "&.Mui-expanded": {
-                  borderColor: "secondary.main",
-                  boxShadow: "0 2px 12px rgba(0,201,167,0.08)",
-                },
-              }}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{ color: "secondary.main" }} />}
-                sx={{
-                  px: 2.5,
-                  "& .MuiAccordionSummary-content": { my: 1.75 },
-                }}
-              >
-                <Stack direction="row" spacing={1.5} alignItems="center">
-                  <Box
-                    sx={{
-                      width: 28,
-                      height: 28,
-                      borderRadius: "50%",
-                      bgcolor: "rgba(0,201,167,0.1)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <Typography
-                      sx={{ fontSize: "0.72rem", fontWeight: 800, color: "secondary.main" }}
-                    >
-                      {idx + 1}
-                    </Typography>
-                  </Box>
-                  <Typography
-                    variant="body1"
-                    sx={{ fontWeight: 600, color: "primary.main", fontSize: "0.97rem" }}
-                  >
-                    {item.title}
-                  </Typography>
-                </Stack>
-              </AccordionSummary>
-              <AccordionDetails sx={{ px: 2.5, pb: 2.5, pt: 0 }}>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: "text.secondary",
-                    lineHeight: 1.85,
-                    pl: 5.5,
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  {item.detail}
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          ))}
-
-          <Divider sx={{ my: 4.5 }} />
-
-          {/* ── Key Challenges Solved ─────────────────────────────────── */}
-          <Stack direction="row" spacing={1.5} alignItems="center" mb={3}>
-            <LightbulbOutlinedIcon sx={{ color: "secondary.main", fontSize: "1.35rem" }} />
-            <Typography variant="h6" sx={{ fontWeight: 700, color: "primary.main" }}>
-              Key Challenges Solved
-            </Typography>
-          </Stack>
-
-          <Grid container spacing={2.5} mb={4.5}>
-            {product.challengesSolved.map((item, idx) => (
-              <Grid item xs={12} sm={6} key={idx}>
-                <Box
-                  sx={{
-                    p: 3,
-                    borderRadius: 2.5,
-                    height: "100%",
-                    bgcolor: "rgba(13,33,55,0.03)",
-                    border: "1px solid",
-                    borderColor: "divider",
-                    transition: "border-color 0.2s",
-                    "&:hover": { borderColor: "rgba(0,201,167,0.4)" },
-                  }}
-                >
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontWeight: 700,
-                      color: "primary.main",
-                      mb: 1.5,
-                      fontSize: "0.92rem",
-                    }}
-                  >
-                    {item.challenge}
-                  </Typography>
-                  <Divider sx={{ mb: 1.5, borderColor: "rgba(0,201,167,0.25)" }} />
-                  <Typography
-                    variant="body2"
-                    sx={{ color: "text.secondary", lineHeight: 1.85, fontSize: "0.87rem" }}
-                  >
-                    {item.outcome}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-
-          <Divider sx={{ my: 4.5 }} />
-
-          {/* ── Integration Ecosystem ─────────────────────────────────── */}
-          <Stack direction="row" spacing={1.5} alignItems="center" mb={2.5}>
-            <HubIcon sx={{ color: "secondary.main", fontSize: "1.35rem" }} />
-            <Typography variant="h6" sx={{ fontWeight: 700, color: "primary.main" }}>
-              Integration Ecosystem
-            </Typography>
-          </Stack>
-          <Typography
-            variant="body2"
-            sx={{ color: "text.secondary", mb: 2.5, fontSize: "0.9rem" }}
-          >
-            External systems and services wired into the platform:
-          </Typography>
-          <Stack direction="row" flexWrap="wrap" gap={1.25}>
-            {product.integrations.map((name) => (
-              <Chip
-                key={name}
-                label={name}
-                sx={{
-                  bgcolor: "rgba(13,33,55,0.06)",
-                  color: "primary.main",
-                  border: "1px solid rgba(13,33,55,0.14)",
-                  fontWeight: 600,
-                  fontSize: "0.82rem",
-                  "&:hover": { bgcolor: "rgba(0,201,167,0.08)" },
-                }}
-              />
-            ))}
-          </Stack>
-        </Box>
-      </DialogContent>
-    </Dialog>
-  );
-};
-
 // ─── Product Card ─────────────────────────────────────────────────────────────
 
 const ProductCard = ({ product }) => {
-  const [dialogOpen, setDialogOpen] = useState(false);
   const statusStyle = STATUS_STYLE[product.status] || STATUS_STYLE.Live;
   const summaryParagraphs = product.summary.split("\n\n");
+  const caseStudyPath = product.caseStudyPath || `/case-studies/${product.id}`;
 
   return (
     <>
@@ -600,23 +330,18 @@ const ProductCard = ({ product }) => {
                   variant="contained"
                   color="primary"
                   fullWidth
+                  component={Link}
+                  to={caseStudyPath}
                   endIcon={<ArrowForwardIcon />}
-                  onClick={() => setDialogOpen(true)}
                   sx={{ fontWeight: 600 }}
                 >
-                  View Architecture Walkthrough
+                  View Case Study
                 </Button>
               </Box>
             </Grid>
           </Grid>
         </Box>
       </Paper>
-
-      <ArchDialog
-        open={dialogOpen}
-        onClose={() => setDialogOpen(false)}
-        product={product}
-      />
     </>
   );
 };

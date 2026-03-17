@@ -5,27 +5,27 @@
     "tagline": "Senior Technology Leader | Principal Engineer | Fintech & Digital Banking",
     "description":"I Build, Lead, and Own Mission-Critical Financial Technology Platforms",
     "image":"profilepic.png",
-    "bio": "I am a Senior Technology Leader with 12+ years of experience transforming regulated fintech environments into modern, cloud-native, API-first ecosystems. I've partnered with leading banks and fintech firms to deliver enterprise-scale digital transformations—accelerating time-to-market by 40% and unlocking multimillion-pound revenue growth within months.\n\nAs Director of Technology at FCamara UK and Interim Principal Engineer for Birmingham Bank, I've led the architecture and launch of fully digital savings and lending platforms. This included migrating legacy infrastructure to Mambu and Azure, enabling AI-driven MFA, and implementing biometric KYC/KYB processes. These initiatives onboarded 5,600+ customers, grew deposit accounts by 225%, automated 19,000+ transactions, and processed £295M+ in digital payments—all while maintaining 99.9% uptime and ensuring PCI DSS, GDPR, and FS compliance.\n\nI've built and mentored high-performing teams of 25+ professionals, advised executive committees, and shaped global delivery strategies across the UK, Brazil, and Portugal. My expertise spans enterprise architecture (microservices, event-driven systems, DDD), digital product innovation, and operational resilience—underpinned by deep technical leadership in Azure, AWS, .NET Core, DevOps, and secure financial integrations.\n\nDriven by a passion for technology and strategic impact, I focus on aligning engineering excellence with business growth—delivering scalable solutions and empowering teams to innovate in highly regulated markets.\n\nAnd despite all the leadership titles… I'm still a developer at heart—often found scratching my head over complex code just like day one.",
+    "bio": "I am a Senior Technology Leader and CTO with 12+ years of experience building mission-critical platforms across fintech, digital banking, and SaaS. I currently serve as CTO & Principal Architect at Astro Advanced Analytics, where I architect and own a multi-tenant Amazon seller intelligence platform from the ground up.\n\nPreviously as Principal Engineer / Head of Technology at FCamara, I led the full digital transformation of Birmingham Bank—migrating legacy infrastructure to Mambu and Azure, implementing biometric KYC/KYB, and delivering a cloud-native savings and lending platform. These initiatives onboarded 5,600+ customers, grew deposit accounts by 225%, automated 19,000+ transactions, and processed £295M+ in digital payments—all while maintaining 99.9% uptime and ensuring PCI DSS, GDPR, and FS compliance.\n\nI've built and mentored high-performing teams of 25+ professionals, advised executive committees, and shaped global delivery strategies across the UK, UAE, Brazil, and Portugal. My expertise spans enterprise architecture (microservices, event-driven systems, DDD), SaaS product engineering, and operational resilience—underpinned by deep technical leadership in Azure, AWS, .NET Core, DevOps, and secure financial integrations.\n\nDriven by a passion for technology and strategic impact, I focus on aligning engineering excellence with business growth—delivering scalable solutions and empowering teams to innovate in highly regulated markets.\n\nAnd despite all the leadership titles… I'm still a developer at heart—often found scratching my head over complex code just like day one.",
     "contactmessage":"Want to get in touch, contact me!",
-    "email": "jayraj@avalphatechnologies.com",
-    "phone": "+447775236983 / +919730323898",
+    "email": "Jayrajnimbalkar1@gmail.com",
+    "phone": "+91 9730323898",
     "github":"https://github.com/jayraj701",
     "project":"https://github.com/jayraj701?tab=projects",
     "linkedinUrl": "https://www.linkedin.com/in/jayrajnimbalkar",
     "linkedinFollow": "https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=jayrajnimbalkar",
     "address":{
       "street":"",
-      "city":"St Albans",
-      "state":"Hertfordshire",
-      "zip": "UK / Remote"
+      "city":"Pune",
+      "state":"India",
+      "zip": "Open to Relocation / Remote"
     },
     "website": "",
     "resumedownload":"https://jayresume.blob.core.windows.net/resume/Jayraj_CV.pdf",
     "impactMetrics": [
-      { "value": "£295M+", "label": "Digital Payments Processed", "icon": "PaymentsIcon" },
-      { "value": "5,600+", "label": "Customers Onboarded", "icon": "PeopleIcon" },
-      { "value": "225%",   "label": "Deposit Account Growth", "icon": "TrendingUpIcon" },
-      { "value": "25+",    "label": "Team Members Led", "icon": "GroupsIcon" }
+      { "value": "£600M+", "label": "Digital Payments Processed", "icon": "PaymentsIcon" },
+      { "value": "9,000+", "label": "Customers Onboarded", "icon": "PeopleIcon" },
+      { "value": "315%",   "label": "Deposit Account Growth", "icon": "TrendingUpIcon" },
+      { "value": "35+",    "label": "Team Members Led", "icon": "GroupsIcon" }
     ],
     "social":[
       {
@@ -62,80 +62,77 @@
         "school":"Pune University",
         "degree":"Bachelor of Engineering",
         "graduated":"May 2013",
-        "description":"Bachelor of Engineering in Information Technology"
+        "description":"Bachelor of Engineering in Computer Engineering"
       }
     ],
     "work":[
       {
-        "company":"New Role",
+        "company":"Astro Advanced Analytics",
         "logo":"",
-        "title":"Coming Soon",
-        "years":"2025 - Present",
-        "tech": "",
-        "description": "",
-        "isSkeleton": true
-      },
-      {
-        "company":"FCamara UK",
-        "logo":"images/fcamara.png",
-        "title":"Principal Engineer",
-        "years":"Mar 2022 - Present",
-        "tech": "Azure, AWS, .NET Core, C#, REST API, SQL, Python, JavaScript, React, Microservices, DDD, BDD, Event-Driven Systems, CRM, Resilience Design",
+        "title":"CTO & Principal Architect",
+        "years":"Oct 2025 - Present",
+        "location":"Remote",
+        "tech": ".NET 9, ASP.NET Core, PostgreSQL, Azure Service Bus, Azure SignalR, Redis, Cosmos DB, MassTransit, React, Stripe, Amazon SP-API, Keepa, OpenTelemetry, Azure DevOps",
         "keyAchievements": [
-          "1,800% increase in digital customer onboarding (300 → 5,668)",
-          "£295M+ in fully automated digital payments processed",
-          "225% increase in deposit accounts (2,000 → 6,540)",
-          "60% reduction in onboarding & processing times",
-          "99.9% uptime maintained across all production systems"
+          "Architected and own Astro Terra — a multi-tenant SaaS platform for Amazon resellers built from the ground up",
+          "Implemented reseller advanced analytics tool to optimise decision making by 10X and save sourcing efforts by 90%",
+          "Serving 50+ live customers in early phase with real-time product intelligence and profitability analytics",
+          "Event-driven bulk processing pipeline with real-time SignalR progress — decoupled from processing layer",
+          "~80% Keepa chart compression via dual-storage strategy (Cosmos DB hot reads + Blob cold archival)"
         ],
-        "description":"As a Principal Engineer and Strategic Technology Leader at FCamara UK, I'm responsible for shaping technology strategy, driving high-impact digital transformations, and enabling global delivery excellence. My role spans executive advisory, enterprise architecture, and operational leadership, ensuring FCamara consistently delivers world-class fintech and digital banking solutions.\n\nStrategic Leadership:\n- Advising the Executive Committee of BakerOnline, a €350M digital commerce platform serving 800+ SMBs, on technical growth strategy, platform scalability, and build-vs-buy evaluations.\n- Partnering with C-level stakeholders to assess technology capabilities, identify modernization opportunities, and guide strategic investments in digital platforms.\n- Leading due diligence efforts for large-scale technology assessments, ensuring secure, compliant, and future-proof solutions.\n\nDigital Banking & FinTech Expertise:\n- Led end-to-end cloud-native transformations for leading financial institutions, including Birmingham Bank:\n  - Migrated legacy banking systems (CORTEN) to Mambu, Azure, and AWS.\n  - Architected event-driven microservices, ensuring resilience, observability, and security (PCI DSS, GDPR).\n  - Delivered fully automated transaction processing handling £295M+ and 19K+ transactions with zero downtime.\n  - Directed development and rollout of Online Banking, Savings Product Marketplace, Omnichannel Platform, and multiple regulatory reporting pipelines (WhistleBrook WIRES ETLs).\n  - Integrated with 15+ fintech providers (Mambu, nCino, LexisNexis, Equifax, Callsign, AccessPay, ClearBank, Tink) to enable scalable, compliant financial services.\n\nTeam Leadership & Culture:\n- Scaled and managed a 25+ cross-functional global team, including Tech Managers, Engineers, Product Owners, and UX Researchers.\n- Fostered a security-first, ownership-driven culture, enabling rapid yet compliant delivery of mission-critical solutions.\n- Implemented notifications, auditing, secure access policies, and workflow automation to enhance operational resilience and transparency.\n\nBusiness Impact:\n- 1,800% increase in digital customer onboarding (300 to 5,668)\n- 225% increase in deposit accounts (2,000 to 6,540)\n- 100% automation of transaction flows, scaling to 19K+ transactions\n- Reduced onboarding and processing times by 60% while maintaining 99.9% uptime\n\nGlobal Delivery Framework:\n- Designed and operationalized FCamara's Global Delivery Framework, enabling seamless international delivery from Brazil, Portugal, UK, US, and Belgium.\n- Reduced talent deployment time by 80% through streamlined mobilization, intelligent resource planning, and optimized DevOps readiness."
+        "description":"As CTO & Principal Architect at Astro Advanced Analytics, I design, build, and own Astro Terra — a multi-tenant SaaS B2B platform purpose-built for Amazon resellers. The platform delivers real-time product analytics, profitability intelligence, and purchase workflow automation, serving three client surfaces (React SPA, Chrome extension, Admin dashboard) from a single API backend.\n\nArchitecture & Engineering:\n- Designed a 14-project layered solution with strict inward dependency rules, keeping inner layers completely free of hosting and transport concerns.\n- Built an event-driven bulk processing pipeline where request acceptance is fully decoupled from processing. Bulk operations return immediately with an operationId; a hosted service processes in configurable chunks while Azure SignalR delivers live progress.\n- Engineered a configurable Quota & Feature Enforcement Engine (ILimitEngine) that evaluates plan tiers, company-level overrides, and cooldown gates independently of all business services — enabling instant plan changes without code deployments.\n- Implemented a dual-storage strategy for Keepa market data: GZip compression achieving ~80% reduction, Cosmos DB for hot partition-key reads, Azure Blob Storage for cost-effective cold archival.\n- Led a zero-downtime auth migration from Azure AD B2C to Stytch, simultaneously supporting three auth systems via normalised claims middleware — all downstream code remained auth-provider-agnostic.\n- Configured OpenTelemetry-first observability with distributed tracing across HTTP, ORM, gRPC, and message bus, with a custom telemetry initializer injecting authenticated user context into every trace.\n\nPlatform Scale:\n- 27 API domain controllers · 220+ automated tests (xUnit, Moq, SQLite in-memory EF) · 14 solution projects · 3 client surfaces · 13+ external integrations"
       },
       {
-        "company":"VillaPlus",
+        "company":"FCamara",
+        "logo":"images/fcamara.png",
+        "title":"Principal Engineer / Head of Technology",
+        "years":"Mar 2022 - Sep 2025",
+        "location":"UK / Dubai, UAE / Pune, India",
+        "tech": "Azure, AWS, Mambu, .NET Core, C#, REST API, SQL, Microservices, Event-Driven Systems, PCI DSS, GDPR, AccessPay, nCino, LexisNexis, Equifax, ClearBank, Tink, Callsign, Azure DevOps",
+        "keyAchievements": [
+          "3,000% increase in digital customer onboarding at Birmingham Bank (300 → 9,000+)",
+          "£600M+ in fully automated digital payments processed",
+          "315% increase in deposit accounts",
+          "Designed FCamara's Global Delivery Framework, reducing deployment time by 80%",
+          "Advised ExCo of BakerOnline (€350M platform for 800+ SMBs) on technical growth strategy"
+        ],
+        "description":"As Principal Engineer / Head of Technology at FCamara, I led high-impact digital transformation engagements across fintech and digital banking, while shaping FCamara's global delivery capabilities.\n\nBirmingham Bank (Key Engagement — 2022–2025):\n- Led the end-to-end digital modernization of Birmingham Bank, replacing legacy CORTEN infrastructure with cloud-native systems on Mambu, Azure, and AWS using an event-driven microservices architecture.\n- Directed the build and rollout of Online Banking, Savings Product Marketplace, Omnichannel Platform, regulatory reporting pipelines, and full transaction automation.\n- Delivered end-to-end Direct Debit capability, Confirmation of Payee (CoP) validation load-tested at 10,000 daily transactions, and automated transactional flows with Lloyds Bank.\n- Architected enterprise data warehouse and defined Data Dictionary and Single Customer View (SCV).\n- Integrated 15+ fintech providers: Mambu, CallSign, nCino, ClearBank, LexisNexis, Tink, Equifax, Cloudflare, AccessPay, ComplyAdvantage, Banfico, Royal Mail.\n- Scaled and managed a cross-functional global team of 25+, fostering a security-first, PCI DSS & GDPR-compliant culture.\n\nFCamara Strategic Work:\n- Designed and operationalized FCamara's Global Delivery Framework, enabling delivery from Brazil, Portugal, UK, US, and Belgium — reducing talent deployment time by 80%.\n- Advised the ExCo of BakerOnline (€350M digital commerce platform, 800+ SMBs) on technical growth strategy, platform scalability, and build-vs-buy decisions.\n- Led large-scale technology due diligence efforts and partnered with C-level stakeholders to align technology roadmaps with strategic objectives.\n\nBusiness Impact:\n- ~3,000% growth in onboarded customers (300 → 9,000+)\n- ~315% growth in deposit accounts\n- 100% automation of transaction processing (0 → 19,141 transactions)\n- £600M+ processed digitally"
+      },
+      {
+        "company":"VillaPlus.com",
         "logo":"images/villaplus.jpg",
-        "title":"Senior Agile Developer",
-        "years":"Dec 2018 - Mar 2022",
+        "title":"Senior Agile Developer / Tech Lead",
+        "years":"Dec 2016 - Mar 2022",
+        "location":"Pune, India (2016–2018) → St Albans, UK (2018–2022)",
         "tech": "Azure, .NET 5 Web API, Angular, Cosmos DB, SQL, Redis",
         "keyAchievements": [
-          "Led microservices migration from monolithic booking platform to Azure",
+          "Led microservices migration from monolithic booking platform to Azure (Booking, Payments, Car Hire, Flights)",
           "Built plug-and-play payment interface integrating Braintree, NMI, Trust Payments, AccessPay",
-          "Led development of MyVillaPlus Angular/.NET Core booking management platform",
-          "Promoted TDD practices and high engineering standards across the team"
+          "Progressed from Senior Developer to Tech Lead, relocating from Pune to St Albans, UK in Dec 2018",
+          "Led development of MyVillaPlus Angular/.NET Core booking management platform"
         ],
-        "description":"As a Senior Software Engineer at VillaPlus, I played a key role in modernizing the company's booking and payments platform. I was part of the core team that migrated a large monolithic system into a domain-driven microservices architecture hosted on Azure, covering domains such as E-commerce, Booking, Payments, Transfers, Car Hire, and Flights.\n\nI contributed to architectural design, disaster recovery planning, monitoring, alerting, CI/CD pipelines, and automated backup processes, ensuring resilience and scalability. I developed a unique, plug-and-play injectable payment interface in JavaScript, enabling seamless integration with major payment gateways including Braintree, NMI, Trust Payments, and AccessPay for both card transactions and Direct Debits.\n\nAdditionally, I led the development of 'MyVillaPlus', an Angular and .NET Core-based booking management platform, and ensured smooth synchronization between legacy and new systems during the migration phase, all while promoting TDD practices and high engineering standards."
-      },
-      {
-        "company":"Ash Software",
-        "logo":"images/ash.png",
-        "title":"Programmer Analyst",
-        "years":"Sept 2016 - Dec 2018",
-        "tech": "Azure, ASP.NET MVC, .NET Core, Angular, SQL",
-        "keyAchievements": [
-          "Modernised legacy booking engine from ASP.NET WebForms to MVC",
-          "Led team of 3 junior developers building MyVillaPlus customer portal",
-          "Introduced configurable CMS-driven landing pages with Prismic integration",
-          "Laid architectural foundation for later full microservices migration"
-        ],
-        "description":"I began my journey at Ash Software, where I focused on refactoring and modernizing the legacy booking engine by migrating it from ASP.NET WebForms to MVC, laying the foundation for a modular architecture and the upcoming website revamp. I also introduced configurable home and customer landing pages, setting the stage for future CMS integration (Prismic) to enable more dynamic content management.\n\nIn this phase, I led a team of three junior developers in building a new post-sale customer booking management product—'MyVillaPlus'—developed in Angular and .NET Core. This initiative marked the first step toward transitioning from a tightly coupled legacy system to a scalable, customer-centric platform, paving the way for the later full microservices migration and digital transformation efforts at VillaPlus."
+        "description":"As Senior Agile Developer and later Tech Lead at VillaPlus, I played a key role in modernizing the company's booking and payments platform over 5+ years across two locations — beginning in Pune, India and relocating to St Albans, UK in December 2018.\n\nI was part of the core team that migrated a large monolithic system into a domain-driven microservices architecture on Azure, covering domains including Booking (Basket & Checkout), Payments, Car Hire, and Flight Booking.\n\nKey Contributions:\n- Developed a unique, plug-and-play injectable payment interface in JavaScript, enabling seamless integration with Braintree, NMI, Trust Payments, and AccessPay for both card transactions and Direct Debits.\n- Led the development of 'MyVillaPlus', an Angular and .NET Core-based booking management platform, managing a team of junior developers.\n- Contributed to architectural design, disaster recovery planning, monitoring, alerting, CI/CD pipelines, and automated backup processes.\n- Progressed from Senior Developer to Tech Lead, taking ownership of delivery quality and team engineering standards."
       },
       {
         "company":"Atos",
         "logo":"images/atos.png",
         "title":"Senior Software Engineer",
-        "years":"Aug 2013 - Sept 2016",
+        "years":"2013 - 2016",
+        "location":"Pune, India",
         "tech": "ASP.NET, TFS, VSS, XSLT, HTML, CSS, JavaScript",
         "keyAchievements": [
-          "Progressed from Associate Engineer to Senior Software Engineer in 3 years",
-          "Collaborated with UK-based client (OHS) on enterprise-grade delivery",
-          "Built strong foundations in .NET, SDLC, and agile delivery"
+          "Contributed to Rio Olympics 2016 app suite",
+          "Built BMW Financial Services platform",
+          "Worked on NHS OHS enterprise system",
+          "Progressed from Associate Engineer to Senior Software Engineer in 3 years"
         ],
-        "description":"I began my professional journey with Atos as an Associate Engineer, working closely with a UK-based client (OHS) and later contributing to the in-house Bit Solution Tool. This role gave me early exposure to European engineering standards, cross-border collaboration, and enterprise-grade software delivery.\n\nDuring my three years at Atos, I developed strong foundations in .NET development, SDLC best practices, and agile delivery, while continuously learning from experienced European engineering teams. My commitment to quality, ownership, and technical excellence enabled me to progress rapidly from Associate Engineer to Senior Software Engineer, a milestone achieved through consistent delivery and recognition of my contributions to high-impact projects."
+        "description":"I began my professional journey with Atos as an Associate Engineer, working across multiple high-profile enterprise projects and client engagements. This role gave me early exposure to European engineering standards, cross-border collaboration, and enterprise-grade software delivery.\n\nKey Projects:\n- Rio Olympics 2016 app suite\n- BMW Financial Services platform\n- NHS OHS enterprise system\n- In-house Bidding Solution Tool\n\nDuring my three years at Atos, I developed strong foundations in .NET development, SDLC best practices, and agile delivery, while continuously learning from experienced European engineering teams. My commitment to quality, ownership, and technical excellence enabled me to progress rapidly from Associate Engineer to Senior Software Engineer."
       }
     ],
     "skillCategories": [
       {
-        "category": "Cloud & Infrastructure",
-        "skills": ["Azure", "AWS", "Microservices", "Event-Driven Systems", "Resilience Design", "Cosmos DB", "Redis"]
+        "category": "Cloud & DevOps",
+        "skills": ["Azure", "AWS", "Azure DevOps", "GitHub", "CI/CD", "Microservices", "Event-Driven Systems", "Resilience Design", "Cosmos DB", "Redis"]
       },
       {
         "category": "Languages & Frameworks",
@@ -143,13 +140,20 @@
       },
       {
         "category": "Architecture & Methodology",
-        "skills": ["DDD", "BDD", "DevOps / CI-CD", "TDD", "PCI DSS / GDPR", "CRM", "XSLT"]
+        "skills": ["DDD", "BDD", "TDD", "Agile / Scrum / Kanban", "PCI DSS / GDPR", "Enterprise Architecture", "Product Management", "Digital Transformation"]
+      },
+      {
+        "category": "Leadership & Domain",
+        "skills": ["Team Building", "Hiring & Mentoring", "Due Diligence", "ExCo Advisory", "FinTech", "Savings & Lending", "BTL Mortgages", "KYC / KYB", "Reg Reporting", "Data Warehouse"]
       }
     ],
     "skills": [
       { "name": "Azure" },
       { "name": "AWS" },
-      { "name": ".NET Core / .NET5 / .NET6" },
+      { "name": "Azure DevOps" },
+      { "name": "GitHub" },
+      { "name": "CI/CD" },
+      { "name": ".NET Core / .NET6" },
       { "name": "C#" },
       { "name": "REST API" },
       { "name": "SQL" },
@@ -168,35 +172,39 @@
       { "name": "ASP.NET MVC" },
       { "name": "HTML" },
       { "name": "CSS" },
-      { "name": "TFS" },
-      { "name": "VSS" },
-      { "name": "XSLT" }
+      { "name": "XSLT" },
+      { "name": "PCI DSS / GDPR" },
+      { "name": "Enterprise Architecture" },
+      { "name": "Digital Transformation" }
     ]
   },
   "signatureProject": {
+    "caseStudyPath": "/case-studies/birmingham-bank",
     "title": "Birmingham Bank — Online Banking Platform",
     "subtitle": "End-to-end cloud-native digital banking delivery for a UK-regulated financial institution",
     "client": "Birmingham Bank",
-    "period": "2022 – 2024",
+    "period": "2022 – 2025",
     "narrative": "Led the complete architectural design and delivery of Birmingham Bank's Online Banking platform — migrating legacy CORTEN infrastructure to a modern, event-driven microservices ecosystem on Mambu and Azure. Accountable for the full technology stack: from regulatory reporting pipelines to biometric KYC/KYB, from real-time payment processing to a multi-channel digital customer experience.",
     "metrics": [
-      { "value": "£295M+", "label": "Payments Processed" },
-      { "value": "5,600+", "label": "Customers Onboarded" },
+      { "value": "£600M+", "label": "Payments Processed" },
+      { "value": "9,000+", "label": "Customers Onboarded" },
       { "value": "19,000+", "label": "Transactions Automated" },
       { "value": "99.9%", "label": "Production Uptime" }
     ],
     "deliverables": [
       "Migrated legacy CORTEN core banking system to Mambu + Azure",
       "Architected event-driven microservices with full observability & PCI DSS compliance",
-      "Integrated 15+ fintech providers: LexisNexis, Equifax, ClearBank, Tink, Callsign, AccessPay",
+      "Integrated 15+ fintech providers: LexisNexis, Equifax, ClearBank, Tink, Callsign, AccessPay, Lloyds",
       "Delivered Online Banking, Savings Marketplace & Omnichannel Platform",
-      "Built AI-driven MFA and biometric KYC/KYB onboarding flows",
-      "Designed WhistleBrook WIRES regulatory reporting ETL pipelines"
+      "Built Confirmation of Payee (CoP) validation and end-to-end Direct Debit capability",
+      "Designed WhistleBrook WIRES regulatory reporting ETL pipelines",
+      "Architected enterprise data warehouse for financial and audit reporting"
     ]
   },
   "products": [
     {
       "id": "astro-terra",
+      "caseStudyPath": "/case-studies/astro-terra",
       "name": "Astro Terra",
       "tagline": "Amazon Seller Analytics & Product Intelligence Platform",
       "role": "CTO & Principal Architect",
