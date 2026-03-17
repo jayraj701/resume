@@ -5,7 +5,9 @@
       "WebSearch",
       "Bash(npm install:*)",
       "Bash(npm uninstall:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(grep -E \"\\\\.\\(json|js|ts|tsx|jsx\\)$\")",
+      "Bash(npm start:*)"
     ]
   }
 }

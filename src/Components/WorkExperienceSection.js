@@ -159,6 +159,11 @@ const WorkCard = ({ work, index }) => {
                       }}
                     />
                   </Stack>
+                  {work.location && (
+                    <Typography variant="caption" sx={{ color: "text.disabled", display: "block", mt: 0.4, fontSize: "0.75rem" }}>
+                      📍 {work.location}
+                    </Typography>
+                  )}
                 </Box>
                 <IconButton
                   size="small"

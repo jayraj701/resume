@@ -38,7 +38,7 @@ const About = ({ data }) => {
     {
       icon: <LocationOnIcon fontSize="small" />,
       label: "Location",
-      value: `${address.city}, ${address.state} — ${address.zip}`,
+      value: `${address.city}, ${address.state}`,
     },
     { icon: <PhoneIcon fontSize="small" />, label: "Phone", value: phone },
     {
@@ -194,15 +194,54 @@ const About = ({ data }) => {
 
             <Divider sx={{ my: 3 }} />
 
-            {/* Quick stats row */}
-            <Grid container spacing={2}>
+            {/* Global presence flags */}
+            <Typography variant="overline" color="text.secondary" sx={{ display: "block", mb: 2 }}>
+              Global Experience
+            </Typography>
+            <Grid container spacing={1.5} sx={{ mb: 3 }}>
               {[
-                { value: "12+", label: "Years Experience" },
-                { value: "UK", label: "Based In" },
-                { value: "Fintech", label: "Specialisation" },
-                { value: "25+", label: "Team Members Led" },
+                { flag: "🇬🇧", value: "8 Years", label: "United Kingdom" },
+                { flag: "🇦🇪", value: "1 Year", label: "Dubai, UAE" },
+                { flag: "🇧🇷", value: "20+ Team", label: "Brazil" },
+                { flag: "🇵🇹", value: "5+ Team", label: "Portugal" },
+              ].map((item) => (
+                <Grid item xs={6} sm={3} key={item.label}>
+                  <Box
+                    sx={{
+                      textAlign: "center",
+                      p: 1.75,
+                      borderRadius: 2,
+                      border: "1px solid",
+                      borderColor: "divider",
+                      bgcolor: "background.default",
+                      transition: "border-color 0.2s",
+                      "&:hover": { borderColor: "secondary.main" },
+                    }}
+                  >
+                    <Typography sx={{ fontSize: "1.8rem", lineHeight: 1.2, mb: 0.5 }}>
+                      {item.flag}
+                    </Typography>
+                    <Typography variant="body2" fontWeight={700} color="primary.main">
+                      {item.value}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      {item.label}
+                    </Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+
+            <Divider sx={{ my: 3 }} />
+
+            {/* Quick stats row — centred */}
+            <Grid container spacing={2} justifyContent="center">
+              {[
+                { value: "13+", label: "Years Experience" },
+                { value: "UK", label: "UK Experienced" },
+                { value: "35+", label: "Team Members Led" },
               ].map((stat) => (
-                <Grid item xs={6} sm={3} key={stat.label}>
+                <Grid item xs={4} key={stat.label}>
                   <Box sx={{ textAlign: "center", p: 1.5 }}>
                     <Typography
                       variant="h3"
