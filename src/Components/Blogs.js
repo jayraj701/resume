@@ -40,10 +40,6 @@ const Blogs = () => {
   const next = () => setCurrent((c) => (c + 1) % blogProjects.length);
 
   // Show 3 cards cycling
-  const getVisible = () => {
-    if (blogProjects.length === 0) return [];
-    return [0, 1, 2].map((i) => blogProjects[(current + i) % blogProjects.length]);
-  };
 
   return (
     <>
