@@ -24,7 +24,7 @@ const SkillsSection = ({ data }) => {
       component="section"
       id="skills"
       sx={{
-        py: { xs: 7, md: 10 },
+        py: { xs: 5, md: 7 },
         bgcolor: "white",
       }}
     >

@@ -10,7 +10,7 @@ const EducationSection = ({ data }) => {
       component="section"
       id="education"
       sx={{
-        py: { xs: 5, md: 7 },
+        py: { xs: 4, md: 5 },
         bgcolor: "background.default",
       }}
     >

@@ -4,12 +4,15 @@ import PaymentsIcon from "@mui/icons-material/Payments";
 import PeopleIcon from "@mui/icons-material/People";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import GroupsIcon from "@mui/icons-material/Groups";
+import LanguageIcon from "@mui/icons-material/Language";
 
 const iconMap = {
   PaymentsIcon: <PaymentsIcon sx={{ fontSize: "2rem" }} />,
   PeopleIcon: <PeopleIcon sx={{ fontSize: "2rem" }} />,
   TrendingUpIcon: <TrendingUpIcon sx={{ fontSize: "2rem" }} />,
   GroupsIcon: <GroupsIcon sx={{ fontSize: "2rem" }} />,
+  UKFlag: <img src="https://flagcdn.com/w40/gb.png" alt="UK" width="40" height="27" style={{ borderRadius: 3, display: "block" }} />,
+  EarthSymbol: <LanguageIcon sx={{ fontSize: "2rem" }} />,
 };
 
 const MetricCard = ({ metric, visible }) => (
@@ -63,6 +66,7 @@ const ImpactMetrics = ({ data }) => {
   const ref = useRef(null);
 
   useEffect(() => {
+    if (!ref.current) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -72,9 +76,9 @@ const ImpactMetrics = ({ data }) => {
       },
       { threshold: 0.2 }
     );
-    if (ref.current) observer.observe(ref.current);
+    observer.observe(ref.current);
     return () => observer.disconnect();
-  }, []);
+  }, [data]);
 
   if (!data || !data.impactMetrics) return null;
 
@@ -83,7 +87,7 @@ const ImpactMetrics = ({ data }) => {
       ref={ref}
       sx={{
         bgcolor: "primary.main",
-        py: { xs: 5, md: 7 },
+        py: { xs: 4, md: 5 },
         position: "relative",
         overflow: "hidden",
         "&::before": {
@@ -116,9 +120,9 @@ const ImpactMetrics = ({ data }) => {
           </Typography>
         </Box>
 
-        <Grid container spacing={{ xs: 2, md: 3 }}>
+        <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
           {data.impactMetrics.map((metric, idx) => (
-            <Grid item xs={6} md={3} key={idx}>
+            <Grid item xs={6} sm={4} md={3} key={idx}>
               <MetricCard metric={metric} visible={visible} />
             </Grid>
           ))}

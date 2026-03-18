@@ -63,24 +63,6 @@ const ProductCard = ({ product }) => {
             backgroundPosition: "center",
           }}
         >
-          {/* Placeholder hint when no image */}
-          <Box
-            sx={{
-              position: "absolute",
-              top: "35%",
-              left: "50%",
-              transform: "translateX(-50%)",
-              textAlign: "center",
-              opacity: 0.18,
-              pointerEvents: "none",
-              whiteSpace: "nowrap",
-            }}
-          >
-            <Typography variant="caption" sx={{ color: "white", fontSize: "0.7rem" }}>
-              {product.heroImage} · 1200 × 480 px
-            </Typography>
-          </Box>
-
           {/* Title content — pinned to bottom */}
           <Box
             sx={{
@@ -355,11 +337,11 @@ const ProductsSection = ({ data }) => {
     <Box
       component="section"
       id="products"
-      sx={{ bgcolor: "background.default", py: { xs: 8, md: 11 } }}
+      sx={{ bgcolor: "background.default", py: { xs: 5, md: 7 } }}
     >
       <Container maxWidth="lg">
         {/* Section Header */}
-        <Box sx={{ mb: { xs: 5, md: 7 } }}>
+        <Box sx={{ mb: { xs: 3, md: 4 } }}>
           <Stack direction="row" spacing={2} alignItems="center" mb={2}>
             <InventoryIcon sx={{ color: "secondary.main", fontSize: "1.8rem" }} />
             <Typography variant="overline" sx={{ color: "secondary.main" }}>
