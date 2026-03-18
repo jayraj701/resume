@@ -112,18 +112,12 @@ const Cover = () => (
       </span>
     </div>
 
-    {/* Product icon */}
-    <svg width="64" height="64" viewBox="0 0 64 64" style={{ marginBottom: 24, zIndex: 1 }}>
-      {/* Chart bars */}
-      <rect x="6" y="38" width="8" height="18" rx="2" fill="#34D399" opacity="0.6" />
-      <rect x="18" y="28" width="8" height="28" rx="2" fill="#0D9488" opacity="0.7" />
-      <rect x="30" y="18" width="8" height="38" rx="2" fill="#34D399" opacity="0.8" />
-      <rect x="42" y="24" width="8" height="32" rx="2" fill="#0D9488" opacity="0.7" />
-      {/* Trend line */}
-      <polyline points="10,36 22,26 34,16 46,22" fill="none" stroke="#F59E0B" strokeWidth="2.5" strokeLinecap="round" />
-      <circle cx="10" cy="36" r="3" fill="#F59E0B" />
-      <circle cx="46" cy="22" r="3" fill="#F59E0B" />
-    </svg>
+    {/* Product logo */}
+    <img
+      src={`${process.env.PUBLIC_URL}/images/astroLogo.svg`}
+      alt="Astro Advanced Analytics"
+      style={{ height: 72, width: "auto", marginBottom: 24, zIndex: 1, position: "relative" }}
+    />
 
     {/* Title */}
     <h1 style={{
@@ -136,7 +130,7 @@ const Cover = () => (
       zIndex: 1,
       letterSpacing: -1,
     }}>
-      Astro Terra
+      Astro Advanced Analytics
     </h1>
     <p style={{
       color: "#94A3B8",
@@ -483,7 +477,7 @@ const CaseStudyFooter = () => (
   }}>
     <p style={{ color: "#0F172A", fontSize: 18, fontWeight: 700, margin: 0 }}>Jayraj Nimbalkar</p>
     <p style={{ color: "#0D9488", fontSize: 13, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", margin: "4px 0 8px" }}>CTO &amp; Principal Architect</p>
-    <p style={{ color: "#94A3B8", fontSize: 12, margin: 0 }}>Astro Terra — 2024 to Present</p>
+    <p style={{ color: "#94A3B8", fontSize: 12, margin: 0 }}>Astro Advanced Analytics — 2024 to Present</p>
     <div style={{ width: 40, height: 2, background: "linear-gradient(90deg, #0D9488, #34D399)", margin: "20px auto 0" }} />
   </div>
 );

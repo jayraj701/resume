@@ -345,7 +345,7 @@ const WorkExperienceSection = ({ data }) => {
   const hasSkeleton = workSorted.some((w) => w.isSkeleton);
 
   return (
-    <Box component="section" id="resume" sx={{ py: { xs: 7, md: 10 }, bgcolor: "background.default" }}>
+    <Box component="section" id="resume" sx={{ py: { xs: 5, md: 7 }, bgcolor: "background.default" }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: "center", mb: { xs: 5, md: 7 } }}>
           <Typography variant="overline" color="secondary.main" sx={{ display: "block", mb: 1 }}>

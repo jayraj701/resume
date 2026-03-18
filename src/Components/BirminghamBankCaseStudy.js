@@ -89,16 +89,12 @@ const Cover = () => (
       </span>
     </div>
 
-    {/* Bank icon */}
-    <svg width="64" height="64" viewBox="0 0 64 64" style={{ marginBottom: 24, zIndex: 1 }}>
-      <rect x="8" y="52" width="48" height="6" rx="2" fill="#34D399" opacity="0.8" />
-      <rect x="12" y="24" width="6" height="28" rx="1" fill="#60A5FA" opacity="0.6" />
-      <rect x="22" y="24" width="6" height="28" rx="1" fill="#60A5FA" opacity="0.7" />
-      <rect x="36" y="24" width="6" height="28" rx="1" fill="#60A5FA" opacity="0.7" />
-      <rect x="46" y="24" width="6" height="28" rx="1" fill="#60A5FA" opacity="0.6" />
-      <polygon points="32,4 4,22 60,22" fill="#2563EB" opacity="0.8" />
-      <circle cx="32" cy="15" r="3" fill="#0F172A" />
-    </svg>
+    {/* Bank logo */}
+    <img
+      src={`${process.env.PUBLIC_URL}/images/bb.svg`}
+      alt="Birmingham Bank"
+      style={{ height: 72, width: "auto", marginBottom: 24, zIndex: 1, position: "relative" }}
+    />
 
     {/* Title */}
     <h1 style={{

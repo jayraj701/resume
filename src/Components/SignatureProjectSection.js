@@ -17,14 +17,14 @@ import { Link } from "react-router-dom";
 const SignatureProjectSection = ({ data }) => {
   if (!data) return null;
 
-  const { title, subtitle, period, narrative, metrics, deliverables, caseStudyPath } = data;
+  const { title, subtitle, period, narrative, metrics, deliverables, caseStudyPath, logo } = data;
 
   return (
     <Box
       component="section"
       sx={{
         bgcolor: "primary.main",
-        py: { xs: 8, md: 11 },
+        py: { xs: 5, md: 7 },
         position: "relative",
         overflow: "hidden",
         "&::after": {
@@ -51,16 +51,29 @@ const SignatureProjectSection = ({ data }) => {
               Signature Project
             </Typography>
           </Stack>
-          <Typography
-            variant="h2"
-            sx={{
-              color: "white",
-              mb: 1.5,
-              fontSize: { xs: "1.6rem", md: "2.2rem" },
-            }}
-          >
-            {title}
-          </Typography>
+          <Stack direction="row" spacing={2} alignItems="center" mb={1.5}>
+            {logo && (
+              <Box
+                component="img"
+                src={logo}
+                alt={title}
+                sx={{
+                  height: 44,
+                  width: "auto",
+                  objectFit: "contain",
+                }}
+              />
+            )}
+            <Typography
+              variant="h2"
+              sx={{
+                color: "white",
+                fontSize: { xs: "1.6rem", md: "2.2rem" },
+              }}
+            >
+              {title}
+            </Typography>
+          </Stack>
           <Typography variant="body1" sx={{ color: "rgba(255,255,255,0.6)", fontWeight: 400 }}>
             {subtitle}
           </Typography>

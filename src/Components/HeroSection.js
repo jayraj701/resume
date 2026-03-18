@@ -41,7 +41,7 @@ const HeroSection = ({ data }) => {
             color: "secondary.main",
             fontSize: "0.8rem",
             letterSpacing: "3px",
-            mb: 2,
+            mb: 1.5,
             display: "block",
           }}
         >
@@ -52,8 +52,8 @@ const HeroSection = ({ data }) => {
           variant="h1"
           sx={{
             color: "white",
-            mb: 3,
-            fontSize: { xs: "2.6rem", sm: "3.5rem", md: "4.5rem" },
+            mb: 2,
+            fontSize: { xs: "2.2rem", sm: "3rem", md: "4rem" },
             fontWeight: 800,
             lineHeight: 1.05,
             letterSpacing: "-2px",
@@ -68,7 +68,7 @@ const HeroSection = ({ data }) => {
             height: 3,
             bgcolor: "secondary.main",
             mx: "auto",
-            mb: 3,
+            mb: 2,
             borderRadius: 2,
           }}
         />
@@ -78,11 +78,11 @@ const HeroSection = ({ data }) => {
           sx={{
             color: "rgba(255,255,255,0.75)",
             fontWeight: 400,
-            fontSize: { xs: "1rem", sm: "1.2rem", md: "1.35rem" },
+            fontSize: { xs: "0.95rem", sm: "1.1rem", md: "1.2rem" },
             lineHeight: 1.6,
             maxWidth: 680,
             mx: "auto",
-            mb: 5,
+            mb: 3.5,
           }}
         >
           {description}
@@ -166,8 +166,8 @@ const HeroSection = ({ data }) => {
       <Box
         onClick={scrollToAbout}
         sx={{
-          position: "absolute",
-          bottom: 36,
+          position: "fixed",
+          bottom: 24,
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: 1,

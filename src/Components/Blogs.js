@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   Typography,
-  Grid,
   Card,
   CardActionArea,
   CardMedia,
@@ -36,14 +35,6 @@ const Blogs = () => {
       .catch(console.error);
   }, []);
 
-  useEffect(() => {
-    if (blogProjects.length > 0) {
-      const timer = setInterval(() => {
-        setCurrent((c) => (c + 1) % blogProjects.length);
-      }, 4000);
-      return () => clearInterval(timer);
-    }
-  }, [blogProjects.length]);
 
   const prev = () => setCurrent((c) => (c - 1 + blogProjects.length) % blogProjects.length);
   const next = () => setCurrent((c) => (c + 1) % blogProjects.length);
@@ -77,40 +68,65 @@ const Blogs = () => {
 
           {blogProjects.length > 0 && (
             <>
-              {/* Desktop: 3-card carousel */}
-              <Box sx={{ display: { xs: "none", md: "block" } }}>
-                <Stack direction="row" alignItems="center" spacing={2}>
-                  <IconButton
-                    onClick={prev}
+              {/* Carousel — 3 visible on desktop, 1 on mobile */}
+              <Stack direction="row" alignItems="stretch" spacing={2}>
+                <IconButton
+                  onClick={prev}
+                  sx={{
+                    bgcolor: "white",
+                    border: "1px solid",
+                    borderColor: "divider",
+                    alignSelf: "center",
+                    flexShrink: 0,
+                    "&:hover": { bgcolor: "primary.main", color: "white" },
+                  }}
+                >
+                  <ArrowBackIcon />
+                </IconButton>
+
+                {/* Viewport — clips overflow */}
+                <Box sx={{ flex: 1, overflow: "hidden" }}>
+                  <Box
                     sx={{
-                      bgcolor: "white",
-                      border: "1px solid",
-                      borderColor: "divider",
-                      "&:hover": { bgcolor: "primary.main", color: "white" },
-                      flexShrink: 0,
+                      display: "flex",
+                      transition: "transform 0.4s ease",
+                      transform: {
+                        xs: `translateX(calc(-${current * 100}%))`,
+                        md: `translateX(calc(-${current * (100 / 3)}%))`,
+                      },
                     }}
                   >
-                    <ArrowBackIcon />
-                  </IconButton>
-
-                  <Grid container spacing={3} sx={{ flex: 1 }}>
-                    {getVisible().map((project, idx) => (
-                      <Grid item xs={12} md={4} key={idx}>
-                        <Card sx={{ height: "100%" }}>
+                    {blogProjects.map((project, idx) => (
+                      <Box
+                        key={idx}
+                        sx={{
+                          flex: { xs: "0 0 100%", md: "0 0 33.333%" },
+                          px: 1.5,
+                          boxSizing: "border-box",
+                        }}
+                      >
+                        <Card
+                          sx={{
+                            height: "100%",
+                            display: "flex",
+                            flexDirection: "column",
+                            border: "1px solid",
+                            borderColor: "divider",
+                          }}
+                        >
                           <CardActionArea
                             href={project.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            sx={{ height: "100%", display: "flex", flexDirection: "column", alignItems: "flex-start" }}
+                            sx={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start" }}
                           >
                             <CardMedia
                               component="img"
-                              height={180}
                               image={"images/portfolio/" + project.image}
                               alt={project.title}
-                              sx={{ objectFit: "cover" }}
+                              sx={{ height: 180, width: "100%", objectFit: "cover", flexShrink: 0 }}
                             />
-                            <CardContent sx={{ flex: 1, p: 2.5 }}>
+                            <CardContent sx={{ flex: 1, p: 2.5, display: "flex", flexDirection: "column" }}>
                               <Chip
                                 label={project.category}
                                 size="small"
@@ -120,9 +136,14 @@ const Blogs = () => {
                                   fontWeight: 600,
                                   fontSize: "0.72rem",
                                   mb: 1.5,
+                                  alignSelf: "flex-start",
                                 }}
                               />
-                              <Typography variant="h5" color="primary.main" sx={{ lineHeight: 1.4 }}>
+                              <Typography
+                                variant="h5"
+                                color="primary.main"
+                                sx={{ lineHeight: 1.4, flex: 1 }}
+                              >
                                 {project.title}
                               </Typography>
                               <Stack direction="row" alignItems="center" spacing={0.5} mt={1.5}>
@@ -134,57 +155,43 @@ const Blogs = () => {
                             </CardContent>
                           </CardActionArea>
                         </Card>
-                      </Grid>
+                      </Box>
                     ))}
-                  </Grid>
+                  </Box>
+                </Box>
 
-                  <IconButton
-                    onClick={next}
+                <IconButton
+                  onClick={next}
+                  sx={{
+                    bgcolor: "white",
+                    border: "1px solid",
+                    borderColor: "divider",
+                    alignSelf: "center",
+                    flexShrink: 0,
+                    "&:hover": { bgcolor: "primary.main", color: "white" },
+                  }}
+                >
+                  <ArrowForwardIcon />
+                </IconButton>
+              </Stack>
+
+              {/* Dot indicators */}
+              <Stack direction="row" justifyContent="center" spacing={1} mt={3}>
+                {blogProjects.map((_, idx) => (
+                  <Box
+                    key={idx}
+                    onClick={() => setCurrent(idx)}
                     sx={{
-                      bgcolor: "white",
-                      border: "1px solid",
-                      borderColor: "divider",
-                      "&:hover": { bgcolor: "primary.main", color: "white" },
-                      flexShrink: 0,
+                      width: idx === current ? 24 : 8,
+                      height: 8,
+                      borderRadius: 4,
+                      bgcolor: idx === current ? "secondary.main" : "divider",
+                      cursor: "pointer",
+                      transition: "all 0.3s ease",
                     }}
-                  >
-                    <ArrowForwardIcon />
-                  </IconButton>
-                </Stack>
-              </Box>
-
-              {/* Mobile: single card */}
-              <Box sx={{ display: { xs: "block", md: "none" } }}>
-                <Stack spacing={3}>
-                  {blogProjects.map((project, idx) => (
-                    <Card key={idx}>
-                      <CardActionArea
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <CardMedia
-                          component="img"
-                          height={180}
-                          image={"images/portfolio/" + project.image}
-                          alt={project.title}
-                          sx={{ objectFit: "cover" }}
-                        />
-                        <CardContent sx={{ p: 2.5 }}>
-                          <Chip
-                            label={project.category}
-                            size="small"
-                            sx={{ bgcolor: "rgba(0,201,167,0.1)", color: "secondary.dark", fontWeight: 600, mb: 1 }}
-                          />
-                          <Typography variant="h5" color="primary.main">
-                            {project.title}
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
-                  ))}
-                </Stack>
-              </Box>
+                  />
+                ))}
+              </Stack>
             </>
           )}
         </Container>
@@ -199,73 +206,62 @@ const Blogs = () => {
           overflow: "hidden",
         }}
       >
-        <Container maxWidth="lg">
-          <Grid container spacing={{ xs: 4, md: 8 }} alignItems="center">
-            <Grid item xs={12} md={5}>
-              <Box
-                sx={{
-                  borderRadius: 3,
-                  overflow: "hidden",
-                  boxShadow: "0 24px 64px rgba(0,0,0,0.4)",
-                  mx: { xs: "auto", md: 0 },
-                  maxWidth: { xs: 280, md: "100%" },
-                }}
-              >
-                <a
-                  href="https://jayresume.blob.core.windows.net/resume/Direct_Debit_Payment_Automation_WhitePaper_I.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: "block" }}
-                >
-                  <img
-                    src="images/DDCoverP.png"
-                    alt="Direct Debit Payment Automation White Paper"
-                    style={{ width: "100%", display: "block" }}
-                  />
-                </a>
-              </Box>
-            </Grid>
-
-            <Grid item xs={12} md={7}>
-              <Stack direction="row" spacing={1.5} alignItems="center" mb={2}>
-                <PictureAsPdfIcon sx={{ color: "secondary.main", fontSize: "1.5rem" }} />
-                <Typography variant="overline" sx={{ color: "secondary.main" }}>
-                  Technical White Paper
-                </Typography>
-              </Stack>
-
-              <Typography
-                variant="h2"
-                sx={{
-                  color: "white",
-                  mb: 2,
-                  fontSize: { xs: "1.6rem", md: "2rem" },
-                }}
-              >
-                Direct Debit Payment Automation
+        <Container maxWidth="sm">
+          <Stack alignItems="center" textAlign="center" spacing={3}>
+            <Stack direction="row" spacing={1.5} alignItems="center">
+              <PictureAsPdfIcon sx={{ color: "secondary.main", fontSize: "1.5rem" }} />
+              <Typography variant="overline" sx={{ color: "secondary.main" }}>
+                Technical White Paper
               </Typography>
+            </Stack>
 
-              <Typography
-                variant="body1"
-                sx={{ color: "rgba(255,255,255,0.75)", mb: 4, lineHeight: 1.85 }}
-              >
-                An in-depth architectural white paper exploring best practices, integration patterns, and implementation strategies for automating Direct Debit payment flows in regulated financial services environments.
-              </Typography>
+            <Typography
+              variant="h2"
+              sx={{ color: "white", fontSize: { xs: "1.6rem", md: "2rem" } }}
+            >
+              Direct Debit Payment Automation
+            </Typography>
 
-              <Button
-                variant="contained"
-                color="secondary"
-                size="large"
-                startIcon={<PictureAsPdfIcon />}
+            <Typography variant="body1" sx={{ color: "rgba(255,255,255,0.75)", lineHeight: 1.85 }}>
+              An in-depth architectural white paper exploring best practices, integration patterns, and implementation strategies for automating Direct Debit payment flows in regulated financial services environments.
+            </Typography>
+
+            <Box
+              sx={{
+                borderRadius: 3,
+                overflow: "hidden",
+                boxShadow: "0 24px 64px rgba(0,0,0,0.4)",
+                maxWidth: 280,
+                width: "100%",
+              }}
+            >
+              <a
                 href="https://jayresume.blob.core.windows.net/resume/Direct_Debit_Payment_Automation_WhitePaper_I.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                sx={{ px: 4, py: 1.5 }}
+                style={{ display: "block" }}
               >
-                Download White Paper
-              </Button>
-            </Grid>
-          </Grid>
+                <img
+                  src="images/DDCoverP.png"
+                  alt="Direct Debit Payment Automation White Paper"
+                  style={{ width: "100%", display: "block" }}
+                />
+              </a>
+            </Box>
+
+            <Button
+              variant="contained"
+              color="secondary"
+              size="large"
+              startIcon={<PictureAsPdfIcon />}
+              href="https://jayresume.blob.core.windows.net/resume/Direct_Debit_Payment_Automation_WhitePaper_I.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ px: 4, py: 1.5 }}
+            >
+              Download White Paper
+            </Button>
+          </Stack>
         </Container>
       </Box>
 
